@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>মোল্লা এগ্রো অ্যান্ড ডেইরি ফার্ম</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#16a34a',
+                            600: '#15803d',
+                            700: '#166534',
+                            800: '#115e59',
+                            900: '#064e3b',
+                        },
+                        brandGold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Hind Siliguri', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Font Hind Siliguri -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Hind Siliguri', sans-serif; overflow-x: hidden; }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #15803d; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 glass-header border-b border-emerald-100 shadow-sm" data-aos="fade-down" data-aos-duration="600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 gap-2 group">
+                <div class="overflow-hidden rounded-lg">
+                    <img src="Mollah Agro Bangla Logo.jpg" alt="মোল্লা এগ্রো লোগো" class="h-12 w-auto object-contain rounded-lg transform group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/120x60/15803d/ffffff?text=Mollah+Agro';">
+                </div>
+                <div>
+                    <span class="text-xl font-bold text-brandGreen-800 block leading-tight group-hover:text-brandGreen-600 transition">মোল্লা এগ্রো</span>
+                    <span class="text-xs text-brandGold-600 font-semibold tracking-wider">অ্যান্ড ডেইরি ফার্ম</span>
+                </div>
+            </a>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex space-x-6 text-base font-medium text-gray-700">
+                <a href="#services" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">আমাদের সেবা</a>
+                <a href="#cattle" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">গরুসমূহ</a>
+                <a href="#milk" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">দুধ ক্রয়</a>
+                <a href="#visit" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">ফার্ম পরিদর্শন</a>
+                <a href="#contact" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">যোগাযোগ</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <!-- Cart Trigger Button -->
+                <button onclick="toggleCartModal()" class="relative bg-emerald-50 text-brandGreen-700 hover:bg-emerald-100 p-2.5 rounded-full transition transform hover:scale-110 shadow-sm">
+                    <i class="fa-solid fa-cart-shopping text-xl"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-brandGold-500 text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
+                </button>
+
+                <!-- Phone Call CTA -->
+                <a href="tel:01715167498" class="hidden sm:inline-flex items-center gap-2 bg-brandGreen-600 hover:bg-brandGreen-700 text-white px-4 py-2 rounded-lg font-semibold shadow-md transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-phone animate-pulse"></i>
+                    <span>০১৭১৫-১৬৭৪৯৮</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-brandGreen-900 via-brandGreen-800 to-emerald-950 text-white py-16 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-8 items-center">
+            
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <span class="inline-block bg-brandGold-500 text-slate-900 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide mb-4 shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+                    ১০০% খাঁটি ও প্রাকৃতিক
+                </span>
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-snug mb-4 drop-shadow-md">
+                    প্রাকৃতিক পরিবেশে লালিত-পালিত অর্গানিক গরু ও খাঁটি দুধ
+                </h1>
+                <p class="text-emerald-100 text-base md:text-lg mb-8 leading-relaxed">
+                    নোয়াখালীর সেনবাগে আমাদের নিজস্ব ফার্মে বৈজ্ঞানিক ও প্রাকৃতিক উপায়ে লালন-পালন করা হয় প্রজনন ও কোরবানির ষাঁড়, গাভী এবং সরবরাহ করা হয় ১০০% বিশুদ্ধ দুধ।
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#cattle" class="bg-brandGold-500 hover:bg-brandGold-600 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-lg transition flex items-center gap-2 transform hover:-translate-y-1">
+                        <span>গরু দেখুন</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#milk" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-3 rounded-lg backdrop-blur transition flex items-center gap-2 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-bottle-droplet text-brandGold-400"></i>
+                        <span>দুধের হিসাব ও অর্ডার</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                <div class="bg-emerald-800/50 p-4 rounded-2xl border border-emerald-500/30 backdrop-blur shadow-2xl transform hover:scale-105 transition duration-500">
+                    <img src="Mollah Agro Bangla Logo.jpg" alt="মোল্লা এগ্রো লোগো" class="rounded-xl w-full max-w-md object-cover shadow-lg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=800&q=80';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Highlights -->
+    <section id="services" class="py-16 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2">আমাদের সেবাসমূহ</h2>
+                <div class="w-16 h-1 bg-brandGold-500 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-emerald-50/50 p-6 rounded-xl border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-brandGreen-600 text-white rounded-lg flex items-center justify-center text-2xl mb-4 shadow-md">
+                        <i class="fa-solid fa-cow"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">কোরবানি ও প্রজনন ষাঁড়</h3>
+                    <p class="text-gray-650 text-sm leading-relaxed">
+                        সম্পূর্ণ স্টেরয়েডমুক্ত, সম্পূর্ণ নিজস্ব জমিতে উৎপাদিত ঘাস ও পুষ্টিকর খৈল-ভূষি খাইয়ে লালন-পালন করা তাজা ষাঁড়।
+                    </p>
+                </div>
+
+                <div class="bg-emerald-50/50 p-6 rounded-xl border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-brandGold-500 text-slate-900 rounded-lg flex items-center justify-center text-2xl mb-4 shadow-md">
+                        <i class="fa-solid fa-whiskey-glass"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">১০০% খাঁটি গরুর দুধ</h3>
+                    <p class="text-gray-650 text-sm leading-relaxed">
+                        কোনোরূপ ভেজাল বা কেমিক্যাল ছাড়া প্রতিদিনের সদ্য দোহনকৃত পুষ্টিকর ফ্রেশ গাভীর দুধ সরবরাহ।
+                    </p>
+                </div>
+
+                <div class="bg-emerald-50/50 p-6 rounded-xl border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-brandGreen-600 text-white rounded-lg flex items-center justify-center text-2xl mb-4 shadow-md">
+                        <i class="fa-solid fa-house-chimney-window"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">ফার্ম ভিজিট ও বুকিং</h3>
+                    <p class="text-gray-650 text-sm leading-relaxed">
+                        সরাসরি সেনবাগের ফার্মে এসে পছন্দমতো গরু যাচাই ও যাচাই বাছাই করে অর্ডার নিশ্চিত করার সুবিধা।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cattle Catalog -->
+    <section id="cattle" class="py-16 bg-gray-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10" data-aos="zoom-in">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2">বর্তমানে পাওয়া যাচ্ছে যেসব গরু</h2>
+                <p class="text-gray-600">পছন্দের গরুটি নির্বাচন করে সরাসরি কার্টে যুক্ত বা কল করুন</p>
+                <div class="w-20 h-1 bg-brandGreen-600 mx-auto rounded mt-3"></div>
+            </div>
+
+            <!-- Cattle Grid -->
+            <div id="cattle-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript will inject cattle cards here with AOS attributes -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Milk Calculator & Ordering -->
+    <section id="milk" class="py-16 bg-gradient-to-br from-emerald-900 to-brandGreen-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 p-10 opacity-10">
+            <i class="fa-solid fa-bottle-droplet text-9xl"></i>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10" data-aos="fade-down">
+                <span class="bg-brandGold-500 text-slate-950 font-bold px-3 py-1 rounded-full text-xs uppercase shadow">অনলাইন দুধ অর্ডার</span>
+                <h2 class="text-2xl md:text-4xl font-bold mt-3 mb-2">দুধের হিসাব ক্যালকুলেটর (দুধ ক্রয়)</h2>
+                <p class="text-emerald-200 text-sm mt-1">সর্বনিম্ন ৫ লিটার থেকে সর্বোচ্চ ২২৫ লিটার পর্যন্ত ডেলিভারি সুবিধা</p>
+            </div>
+
+            <div class="bg-white text-gray-800 rounded-2xl p-6 md:p-8 shadow-2xl transform transition hover:shadow-emerald-500/30" data-aos="fade-up" data-aos-duration="800">
+                <div class="mb-6">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">দৈনিক দুধের পরিমাণ: <span id="milk-val-display" class="text-brandGreen-700 text-xl font-extrabold">১৫</span> লিটার</label>
+                    <input type="range" id="milk-slider" min="5" max="225" value="15" step="1" oninput="updateMilkCalc()" class="w-full h-3 bg-emerald-100 rounded-lg appearance-none cursor-pointer accent-brandGreen-600">
+                    <div class="flex justify-between text-xs text-gray-500 mt-2 font-semibold">
+                        <span>৫ লিটার (Min)</span>
+                        <span>১০০ লিটার</span>
+                        <span>২২৫ লিটার (Max)</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">সময়কাল নির্বাচন করুন:</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <button type="button" onclick="setDuration(1)" class="dur-btn border-2 border-emerald-600 text-emerald-700 bg-emerald-50 py-2 rounded-lg font-bold text-sm transition transform hover:scale-105 active:scale-95 shadow-sm">১ দিন</button>
+                        <button type="button" onclick="setDuration(7)" class="dur-btn border-2 border-gray-200 text-gray-600 py-2 rounded-lg font-bold text-sm transition transform hover:scale-105 active:scale-95 hover:bg-gray-50 shadow-sm">৭ দিন</button>
+                        <button type="button" onclick="setDuration(15)" class="dur-btn border-2 border-gray-200 text-gray-600 py-2 rounded-lg font-bold text-sm transition transform hover:scale-105 active:scale-95 hover:bg-gray-50 shadow-sm">১৫ দিন</button>
+                        <button type="button" onclick="setDuration(30)" class="dur-btn border-2 border-gray-200 text-gray-600 py-2 rounded-lg font-bold text-sm transition transform hover:scale-105 active:scale-95 hover:bg-gray-50 shadow-sm">১ মাস (৩০ দিন)</button>
+                    </div>
+                </div>
+
+                <div class="bg-emerald-50 p-5 rounded-xl border border-emerald-200 mb-6 flex flex-wrap justify-between items-center gap-4 transition-all duration-300">
+                    <div>
+                        <span class="text-xs text-gray-500 block font-semibold mb-1">মোট আনুমানিক দুধ</span>
+                        <span id="total-liters-display" class="text-xl font-bold text-brandGreen-800 transition-all">১৫ লিটার</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-gray-500 block font-semibold mb-1">প্রতি লিটার ৳১১০ হিসাব</span>
+                        <span id="total-price-display" class="text-3xl font-black text-brandGold-600 transition-all inline-block">৳১,৬৫০</span>
+                    </div>
+                </div>
+
+                <button onclick="addMilkToCart()" class="w-full bg-brandGreen-600 hover:bg-brandGreen-700 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-lg transform hover:-translate-y-1 hover:shadow-xl active:translate-y-0">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    <span>দুধ কার্টে যোগ করুন (Add to Cart)</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farm Visit Form -->
+    <section id="visit" class="py-16 bg-white overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2">ফার্ম পরিদর্শনের অনলাইন আবেদন</h2>
+                <p class="text-gray-600">আপনি সরাসরি আমাদের নোয়াখালী ফার্মে এসে পরিবেশ ও গরু দেখে যেতে পারেন</p>
+                <div class="w-16 h-1 bg-brandGold-500 mx-auto rounded mt-3"></div>
+            </div>
+
+            <form onsubmit="handleVisitSubmit(event)" class="bg-gray-50 p-6 md:p-10 rounded-2xl border border-gray-200 shadow-xl space-y-5" data-aos="zoom-in-up" data-aos-duration="800">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">আপনার নাম *</label>
+                        <input type="text" required placeholder="উদাহরণ: মোঃ কবির হোসেন" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition shadow-sm hover:border-gray-400 bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">মোবাইল নম্বর *</label>
+                        <input type="tel" required placeholder="017XXXXXXXX" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition shadow-sm hover:border-gray-400 bg-white">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">পরিদর্শনের সম্ভাব্য তারিখ *</label>
+                        <input type="date" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition shadow-sm text-gray-700 hover:border-gray-400 bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">দর্শনার্থীর সংখ্যা</label>
+                        <input type="number" min="1" value="1" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition shadow-sm hover:border-gray-400 bg-white">
+                    </div>
+                </div>
+                
+                <button type="submit" class="w-full bg-brandGreen-600 hover:bg-brandGreen-700 text-white font-bold py-4 mt-4 rounded-xl shadow-md transition transform hover:-translate-y-1 text-lg flex justify-center items-center gap-2">
+                    <i class="fa-regular fa-calendar-check"></i> আবেদন জমা দিন
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="contact" class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 border-b-2 border-brandGold-500 inline-block pb-2">আমাদের সাথে যোগাযোগের ঠিকানা</h2>
+                    
+                    <div class="space-y-5 mt-4">
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
+                            <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center text-brandGreen-600 text-xl shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-user-gear"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">ফার্ম ম্যানেজার</span>
+                                <span class="font-bold text-lg text-gray-900">তানজিন (Tanzin)</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
+                            <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center text-brandGreen-600 text-xl shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">ফোন / হোয়াটসঅ্যাপ</span>
+                                <a href="tel:01715167498" class="text-brandGreen-700 font-bold text-xl hover:underline block">01715-167498</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
+                            <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center text-brandGreen-600 text-xl shrink-0 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">লোকেশন</span>
+                                <span class="font-semibold text-gray-800 leading-relaxed">উত্তর মোহাম্মদপুর, সেনবাগ<br>নোয়াখালী, বাংলাদেশ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Embed -->
+                <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white h-96 relative group" data-aos="fade-left">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58728.85741824193!2d91.20573985!3d22.9868731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375352cbb935bd6f%3A0xbbfd1186b1f24d98!2sSenbagh!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="filter transition duration-500 grayscale-0 hover:grayscale-0"></iframe>
+                    <div class="absolute inset-0 bg-brandGreen-900/5 pointer-events-none group-hover:bg-transparent transition duration-300"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brandGreen-900 text-white py-10 border-t-4 border-brandGold-500 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div>
+                <a href="#" class="flex items-center space-x-2 mb-2 justify-center md:justify-start hover:opacity-80 transition">
+                    <span class="text-xl font-bold text-white">মোল্লা এগ্রো</span>
+                </a>
+                <p class="text-emerald-200 text-sm">© ২০২৬ মোল্লা এগ্রো অ্যান্ড ডেইরি ফার্ম। সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandGold-500 hover:text-slate-900 transition transform hover:scale-110">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandGold-500 hover:text-slate-900 transition transform hover:scale-110">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART SLIDE-OVER MODAL -->
+    <div id="cart-modal" class="fixed inset-0 z-50 hidden flex justify-end">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="cart-overlay" onclick="toggleCartModal(false)"></div>
+        <div class="bg-white w-full max-w-md h-full flex flex-col shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out relative z-10" id="cart-panel">
+            
+            <div class="p-5 bg-brandGreen-700 text-white flex justify-between items-center shadow-md">
+                <h3 class="font-bold text-lg flex items-center gap-2"><i class="fa-solid fa-cart-shopping"></i> শপিং কার্ট</h3>
+                <button onclick="toggleCartModal(false)" class="text-white hover:text-brandGold-400 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center transition hover:rotate-90">&times;</button>
+            </div>
+
+            <div id="cart-items-container" class="flex-1 p-5 overflow-y-auto space-y-4 bg-gray-50">
+                <!-- Cart items inserted dynamically -->
+            </div>
+
+            <div class="p-5 border-t bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-20">
+                <div class="flex justify-between items-center text-lg font-bold text-gray-900 mb-4 bg-emerald-50 p-3 rounded-lg border border-emerald-100">
+                    <span>সর্বমোট মূল্য:</span>
+                    <span id="cart-total-price" class="text-brandGreen-700 text-xl font-black transition-all">৳০</span>
+                </div>
+                <button onclick="openCheckoutModal()" class="w-full bg-brandGold-500 hover:bg-brandGold-600 text-slate-950 font-bold py-3.5 rounded-xl shadow-lg transition flex justify-center items-center gap-2 transform hover:-translate-y-1 active:translate-y-0 text-lg">
+                    <span>অর্ডার নিশ্চিত করুন</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkout-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity opacity-0" id="checkout-overlay"></div>
+        <div class="bg-white rounded-2xl max-w-lg w-full p-0 shadow-2xl max-h-[90vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 relative z-10 overflow-hidden" id="checkout-panel">
+            
+            <div class="p-5 border-b bg-gray-50 flex justify-between items-center shrink-0">
+                <h3 class="font-bold text-xl text-brandGreen-800 flex items-center gap-2"><i class="fa-solid fa-clipboard-check"></i> চেকআউট ফর্ম</h3>
+                <button onclick="closeCheckoutModal()" class="text-gray-400 hover:text-red-500 w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center transition hover:rotate-90">&times;</button>
+            </div>
+
+            <div class="overflow-y-auto p-6 space-y-5">
+                <div id="checkout-summary" class="bg-emerald-50 p-4 rounded-xl text-sm text-gray-700 space-y-2 border border-emerald-100 shadow-inner">
+                    <!-- Cart summary populated by JS -->
+                </div>
+
+                <form onsubmit="handlePlaceOrder(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">আপনার নাম *</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition bg-gray-50 focus:bg-white hover:border-gray-400">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">মোবাইল নাম্বার *</label>
+                        <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition bg-gray-50 focus:bg-white hover:border-gray-400">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">ডেলিভারির সম্পূর্ণ ঠিকানা *</label>
+                        <textarea required rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition bg-gray-50 focus:bg-white placeholder-gray-400 hover:border-gray-400" placeholder="এলাকা, উপজেলা, জেলা বিস্তারিত লিখুন"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-brandGreen-600 hover:bg-brandGreen-700 text-white font-bold py-4 mt-2 rounded-xl shadow-lg text-lg transition transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>অর্ডার সম্পন্ন করুন</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS POPUP MODAL -->
+    <div id="success-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity opacity-0" id="success-overlay"></div>
+        <div class="bg-white rounded-3xl max-w-sm w-full p-8 text-center shadow-2xl transform scale-90 opacity-0 transition-all duration-300 relative z-10" id="success-panel">
+            
+            <div class="w-24 h-24 bg-emerald-100 text-brandGreen-600 rounded-full flex items-center justify-center text-5xl mx-auto mb-6 relative shadow-inner">
+                <i class="fa-solid fa-check relative z-10"></i>
+                <div class="absolute inset-0 rounded-full border-4 border-brandGreen-500 animate-ping opacity-20"></div>
+            </div>
+            
+            <h3 id="success-title" class="text-2xl font-black text-gray-900 mb-2">ধন্যবাদ!</h3>
+            <p id="success-msg" class="text-gray-600 leading-relaxed mb-8 font-medium"></p>
+            
+            <button onclick="closeSuccessModal()" class="w-full bg-brandGreen-600 hover:bg-brandGreen-700 text-white font-bold py-3.5 rounded-xl transition shadow-lg text-lg transform hover:-translate-y-1">
+                ঠিক আছে
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Action Buttons for Mobile -->
+    <div class="fixed bottom-6 right-6 z-30 flex flex-col gap-3">
+        <a href="https://wa.me/8801715167498" target="_blank" class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-[0_4px_14px_0_rgba(34,197,94,0.39)] hover:scale-110 hover:-translate-y-1 transition duration-300">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:01715167498" class="w-14 h-14 bg-brandGreen-700 text-white rounded-full flex items-center justify-center text-2xl shadow-[0_4px_14px_0_rgba(21,128,61,0.39)] hover:scale-110 hover:-translate-y-1 transition duration-300 sm:hidden">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Javascript Logic -->
+    <script>
+        // Initialize AOS Animation
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 700,
+            easing: 'ease-out-cubic'
+        });
+
+        // Cattle Data
+        const cattleList = [
+            { id: '101', name: 'রাজা বাবু (বিশাল ষাঁড়)', category: 'প্যাকেজ ষাঁড়', weight: '৫৫০ কেজি', teeth: '৪ টা', price: 215000, img: 'https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=600&q=80', delay: 100 },
+            { id: '102', name: 'কালো মানিক (ফ্রিজিয়ান)', category: 'প্যাকেজ ষাঁড়', weight: '৪৮০ কেজি', teeth: '২ টা', price: 185000, img: 'https://images.unsplash.com/photo-1570042707222-793393a5eb40?auto=format&fit=crop&w=600&q=80', delay: 200 },
+            { id: '103', name: 'লাল বাহাদুর (উন্নত শাহিওয়াল)', category: 'প্যাকেজ ষাঁড়', weight: '৪২০ কেজি', teeth: '২ টা', price: 160000, img: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=600&q=80', delay: 300 },
+            { id: '104', name: 'রানি (দুধের গাভী)', category: 'গাভী', weight: 'দৈনিক ১৮-২০ লিটার দুধ', teeth: 'অর্গানিক', price: 230000, img: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=600&q=80', delay: 100 },
+            { id: '105', name: 'সুলতান (কোরবানি স্পেশাল)', category: 'প্যাকেজ ষাঁড়', weight: '৩৮০ কেজি', teeth: '২ টা', price: 145000, img: 'https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=600&q=80', delay: 200 },
+            { id: '106', name: 'সুন্দরীতামা (ছোট বাছুর/গাভী)', category: 'বাছুর', weight: '১৮০ কেজি', teeth: 'দাঁত উঠেনি', price: 130000, img: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=600&q=80', delay: 300 }
+        ];
+
+        let cart = [];
+        let milkSelectedDuration = 1;
+
+        // Render Cattle with Animations
+        function renderCattle() {
+            const container = document.getElementById('cattle-grid');
+            container.innerHTML = cattleList.map(item => `
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group" data-aos="fade-up" data-aos-delay="${item.delay}">
+                    <div class="overflow-hidden relative h-56">
+                        <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition duration-300"></div>
+                        <span class="absolute top-3 left-3 bg-brandGreen-600/90 backdrop-blur text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">ID: #${item.id}</span>
+                    </div>
+                    
+                    <div class="p-6 space-y-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-xl text-gray-900 group-hover:text-brandGreen-700 transition">${item.name}</h3>
+                        </div>
+                        
+                        <span class="inline-block bg-emerald-50 text-emerald-800 text-xs font-bold px-3 py-1 rounded border border-emerald-100">${item.category}</span>
+                        
+                        <div class="text-sm text-gray-600 space-y-2 bg-gray-50 p-3 rounded-lg border border-gray-100">
+                            <p class="flex items-center gap-2"><i class="fa-solid fa-weight-hanging text-brandGreen-600 w-4"></i> <span class="font-semibold text-gray-800">ওজন/ক্ষমতা:</span> ${item.weight}</p>
+                            <p class="flex items-center gap-2"><i class="fa-solid fa-certificate text-brandGreen-600 w-4"></i> <span class="font-semibold text-gray-800">দাঁত:</span> ${item.teeth}</p>
+                        </div>
+                        
+                        <div class="pt-3 flex justify-between items-center border-t border-gray-100 mt-2">
+                            <span class="text-xl font-black text-brandGreen-700">৳${item.price.toLocaleString('bn-BD')}</span>
+                            <button onclick="addCattleToCart('${item.id}')" class="bg-brandGold-500 hover:bg-brandGold-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-md transition transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> কিনুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Milk Calc Logic
+        function updateMilkCalc() {
+            const slider = document.getElementById('milk-slider');
+            const liters = parseInt(slider.value);
+            document.getElementById('milk-val-display').innerText = liters;
+            
+            const totalLiters = liters * milkSelectedDuration;
+            const totalPrice = totalLiters * 110;
+
+            document.getElementById('total-liters-display').innerText = `${totalLiters} লিটার`;
+            
+            // Animate price update
+            const priceDisplay = document.getElementById('total-price-display');
+            priceDisplay.innerText = `৳${totalPrice.toLocaleString('bn-BD')}`;
+            
+            priceDisplay.style.transform = 'scale(1.1)';
+            priceDisplay.style.color = '#16a34a'; // brief flash to green
+            setTimeout(() => {
+                priceDisplay.style.transform = 'scale(1)';
+                priceDisplay.style.color = ''; // back to gold
+            }, 200);
+        }
+
+        function setDuration(days) {
+            milkSelectedDuration = days;
+            document.querySelectorAll('.dur-btn').forEach(btn => {
+                btn.classList.remove('border-emerald-600', 'text-emerald-700', 'bg-emerald-50', 'ring-2', 'ring-emerald-200');
+                btn.classList.add('border-gray-200', 'text-gray-600');
+            });
+            event.target.classList.add('border-emerald-600', 'text-emerald-700', 'bg-emerald-50', 'ring-2', 'ring-emerald-200');
+            updateMilkCalc();
+        }
+
+        // Cart Actions
+        function addCattleToCart(id) {
+            const cattle = cattleList.find(c => c.id === id);
+            cart.push({ id: cattle.id, name: cattle.name, price: cattle.price, qty: 1, type: 'গরু' });
+            updateCartUI();
+            toggleCartModal(true);
+        }
+
+        function addMilkToCart() {
+            const liters = parseInt(document.getElementById('milk-slider').value);
+            const totalLiters = liters * milkSelectedDuration;
+            const totalPrice = totalLiters * 110;
+
+            cart.push({
+                id: 'MILK-' + Date.now(),
+                name: `খাঁটি দুধ (${liters} লি/দিন - ${milkSelectedDuration} দিন)`,
+                price: totalPrice,
+                qty: 1,
+                type: 'দুধ'
+            });
+            updateCartUI();
+            toggleCartModal(true);
+        }
+
+        function removeCartItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            // Update Cart Count Badge with pop animation
+            const countBadge = document.getElementById('cart-count');
+            countBadge.innerText = cart.length;
+            countBadge.classList.add('scale-150', 'bg-red-500');
+            setTimeout(() => countBadge.classList.remove('scale-150', 'bg-red-500'), 300);
+
+            const container = document.getElementById('cart-items-container');
+            
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 px-4 text-gray-500 flex flex-col items-center">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-basket-shopping text-3xl text-gray-300"></i>
+                        </div>
+                        <p class="font-bold text-lg text-gray-700">আপনার কার্ট খালি রয়েছে</p>
+                        <p class="text-sm mt-1">পছন্দের গরু বা দুধ কার্টে যুক্ত করুন</p>
+                    </div>`;
+                document.getElementById('cart-total-price').innerText = '৳০';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map((item, idx) => {
+                total += item.price;
+                const icon = item.type === 'দুধ' ? '<i class="fa-solid fa-bottle-droplet text-brandGold-500"></i>' : '<i class="fa-solid fa-cow text-brandGreen-600"></i>';
+                
+                return `
+                    <div class="flex justify-between items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition group animate-[fadeIn_0.3s_ease-out]">
+                        <div class="flex gap-3 items-center">
+                            <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition">
+                                ${icon}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-800 line-clamp-1">${item.name}</h4>
+                                <span class="text-sm font-black text-brandGreen-700 mt-1 block">৳${item.price.toLocaleString('bn-BD')}</span>
+                            </div>
+                        </div>
+                        <button onclick="removeCartItem(${idx})" class="w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition shadow-sm transform hover:scale-110">
+                            <i class="fa-solid fa-trash-can text-xs"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('cart-total-price').innerText = `৳${total.toLocaleString('bn-BD')}`;
+        }
+
+        // Add a simple fade-in animation keyframe for newly added cart items
+        document.head.insertAdjacentHTML("beforeend", `<style>@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }</style>`);
+
+        // --- Modals Animation Logic ---
+        
+        function toggleCartModal(show = null) {
+            const modal = document.getElementById('cart-modal');
+            const panel = document.getElementById('cart-panel');
+            const overlay = document.getElementById('cart-overlay');
+            
+            const isShowing = !modal.classList.contains('hidden');
+            const willShow = show !== null ? show : !isShowing;
+
+            if (willShow) {
+                modal.classList.remove('hidden');
+                // Force reflow for transitions to work
+                void modal.offsetWidth;
+                overlay.classList.remove('opacity-0');
+                panel.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden'; // Prevent background scroll
+            } else {
+                overlay.classList.add('opacity-0');
+                panel.classList.add('translate-x-full');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+
+        function openCheckoutModal() {
+            if (cart.length === 0) {
+                showSuccessModal("দুঃখিত!", "আপনার কার্ট খালি। দয়া করে কার্টে আইটেম যুক্ত করুন।", false);
+                return;
+            }
+            toggleCartModal(false); // Close cart first
+            
+            setTimeout(() => {
+                const modal = document.getElementById('checkout-modal');
+                const panel = document.getElementById('checkout-panel');
+                const overlay = document.getElementById('checkout-overlay');
+                const summary = document.getElementById('checkout-summary');
+                
+                let total = cart.reduce((acc, curr) => acc + curr.price, 0);
+                summary.innerHTML = `
+                    <p class="font-bold border-b border-emerald-200 pb-2 mb-2 text-brandGreen-900 flex justify-between">
+                        <span>অর্ডারের সারাংশ</span>
+                        <span class="bg-brandGreen-600 text-white text-xs px-2.5 py-1 rounded-full shadow-sm">${cart.length} আইটেম</span>
+                    </p>
+                    <div class="max-h-32 overflow-y-auto space-y-1.5 pr-2">
+                        ${cart.map(i => `<div class="flex justify-between text-xs font-medium text-gray-700 border-b border-gray-100 pb-1.5"><span>${i.name}</span><span class="font-bold">৳${i.price.toLocaleString('bn-BD')}</span></div>`).join('')}
+                    </div>
+                    <div class="flex justify-between font-black pt-2.5 border-t border-emerald-200 text-brandGreen-800 text-base mt-2">
+                        <span>সর্বমোট বিল:</span>
+                        <span class="text-brandGold-600 text-lg">৳${total.toLocaleString('bn-BD')}</span>
+                    </div>
+                `;
+                
+                modal.classList.remove('hidden');
+                void modal.offsetWidth;
+                overlay.classList.remove('opacity-0');
+                panel.classList.remove('scale-95', 'opacity-0');
+                document.body.style.overflow = 'hidden';
+            }, 300); // Wait for cart slide-out to finish
+        }
+
+        function closeCheckoutModal() {
+            const modal = document.getElementById('checkout-modal');
+            const panel = document.getElementById('checkout-panel');
+            const overlay = document.getElementById('checkout-overlay');
+            
+            overlay.classList.add('opacity-0');
+            panel.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function handlePlaceOrder(e) {
+            e.preventDefault();
+            closeCheckoutModal();
+            cart = [];
+            updateCartUI();
+            
+            setTimeout(() => {
+                showSuccessModal(
+                    "অর্ডার সফল হয়েছে!", 
+                    "আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে! আমাদের প্রতিনিধি ডেলিভারির জন্য খুব শীঘ্রই আপনার সাথে ফোনে যোগাযোগ করবেন।"
+                );
+            }, 300);
+        }
+
+        function handleVisitSubmit(e) {
+            e.preventDefault();
+            showSuccessModal(
+                "আবেদন গৃহীত হয়েছে!", 
+                "আপনার ফার্ম পরিদর্শনের আবেদনটি সফলভাবে গৃহীত হয়েছে! নির্দিষ্ট তারিখে আপনার আগমনের জন্য আমরা অপেক্ষায় রইলাম।"
+            );
+            e.target.reset();
+        }
+
+        function showSuccessModal(title, msg, isSuccess = true) {
+            const modal = document.getElementById('success-modal');
+            const panel = document.getElementById('success-panel');
+            const overlay = document.getElementById('success-overlay');
+            const titleEl = document.getElementById('success-title');
+            const msgEl = document.getElementById('success-msg');
+            const iconContainer = panel.querySelector('.rounded-full');
+            const icon = iconContainer.querySelector('i');
+            const ring = iconContainer.querySelector('.animate-ping');
+
+            titleEl.innerText = title;
+            msgEl.innerText = msg;
+
+            if (isSuccess) {
+                iconContainer.className = "w-24 h-24 bg-emerald-100 text-brandGreen-600 rounded-full flex items-center justify-center text-5xl mx-auto mb-6 relative shadow-inner";
+                icon.className = "fa-solid fa-check relative z-10";
+                ring.className = "absolute inset-0 rounded-full border-4 border-brandGreen-500 animate-ping opacity-20";
+                titleEl.className = "text-2xl font-black text-brandGreen-700 mb-2";
+            } else {
+                iconContainer.className = "w-24 h-24 bg-red-100 text-red-500 rounded-full flex items-center justify-center text-5xl mx-auto mb-6 relative shadow-inner";
+                icon.className = "fa-solid fa-triangle-exclamation relative z-10";
+                ring.className = "absolute inset-0 rounded-full border-4 border-red-500 animate-ping opacity-20";
+                titleEl.className = "text-2xl font-black text-red-600 mb-2";
+            }
+            
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            overlay.classList.remove('opacity-0');
+            panel.classList.remove('scale-90', 'opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            const panel = document.getElementById('success-panel');
+            const overlay = document.getElementById('success-overlay');
+            
+            overlay.classList.add('opacity-0');
+            panel.classList.add('scale-90', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // Init Setup
+        window.onload = function() {
+            renderCattle();
+            updateMilkCalc();
+        };
+    </script>
+</body>
+</html>
