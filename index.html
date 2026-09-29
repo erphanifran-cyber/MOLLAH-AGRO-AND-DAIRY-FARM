@@ -3,771 +3,816 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>মোল্লা এগ্রো অ্যান্ড ডেইরি ফার্ম</title>
-    <!-- Tailwind CSS CDN -->
+    <title>মোল্লা এগ্রো অ্যান্ড ডেইরী ফার্ম | Mollah Agro & Dairy Farm</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Font (Bangla & English) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brandGreen: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            500: '#16a34a',
-                            600: '#15803d',
-                            700: '#166534',
-                            800: '#115e59',
-                            900: '#064e3b',
-                        },
-                        brandGold: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
-                    },
                     fontFamily: {
-                        sans: ['Hind Siliguri', 'sans-serif'],
+                        sans: ['"Hind Siliguri"', 'sans-serif'],
+                    },
+                    colors: {
+                        farm: {
+                            50: '#f2fbf5',
+                            100: '#e1f6e8',
+                            200: '#c3ecd4',
+                            300: '#95dbb5',
+                            400: '#5fc290',
+                            500: '#3ba573',
+                            600: '#2b845a',
+                            700: '#256a4a',
+                            800: '#21543d',
+                            900: '#1d4533',
+                        },
+                        cream: '#FDFBF7'
                     }
                 }
             }
         }
     </script>
-    <!-- Google Font Hind Siliguri -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <style>
-        body { font-family: 'Hind Siliguri', sans-serif; overflow-x: hidden; }
-        .glass-header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
+        body { font-family: 'Hind Siliguri', sans-serif; background-color: #FDFBF7; }
+        ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #15803d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #3ba573; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2b845a; }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 3px solid #2b845a;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 8px;
+            cursor: pointer;
+            background: #95dbb5;
+            border-radius: 4px;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+<body class="text-gray-800 antialiased overflow-x-hidden">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 glass-header border-b border-emerald-100 shadow-sm" data-aos="fade-down" data-aos-duration="600">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-            
-            <!-- Logo -->
-            <a href="#" class="flex items-center space-x-3 gap-2 group">
-                <div class="overflow-hidden rounded-lg">
-                    <img src="Mollah Agro Bangla Logo.jpg" alt="মোল্লা এগ্রো লোগো" class="h-12 w-auto object-contain rounded-lg transform group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/120x60/15803d/ffffff?text=Mollah+Agro';">
-                </div>
-                <div>
-                    <span class="text-xl font-bold text-brandGreen-800 block leading-tight group-hover:text-brandGreen-600 transition">মোল্লা এগ্রো</span>
-                    <span class="text-xs text-brandGold-600 font-semibold tracking-wider">অ্যান্ড ডেইরি ফার্ম</span>
-                </div>
-            </a>
-
-            <!-- Nav Links -->
-            <nav class="hidden md:flex space-x-6 text-base font-medium text-gray-700">
-                <a href="#services" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">আমাদের সেবা</a>
-                <a href="#cattle" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">গরুসমূহ</a>
-                <a href="#milk" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">দুধ ক্রয়</a>
-                <a href="#visit" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">ফার্ম পরিদর্শন</a>
-                <a href="#contact" class="hover:text-brandGreen-600 transition hover:-translate-y-0.5 transform inline-block">যোগাযোগ</a>
-            </nav>
-
-            <!-- Actions -->
-            <div class="flex items-center space-x-4">
-                <!-- Cart Trigger Button -->
-                <button onclick="toggleCartModal()" class="relative bg-emerald-50 text-brandGreen-700 hover:bg-emerald-100 p-2.5 rounded-full transition transform hover:scale-110 shadow-sm">
-                    <i class="fa-solid fa-cart-shopping text-xl"></i>
-                    <span id="cart-count" class="absolute -top-1 -right-1 bg-brandGold-500 text-white font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
-                </button>
-
-                <!-- Phone Call CTA -->
-                <a href="tel:01715167498" class="hidden sm:inline-flex items-center gap-2 bg-brandGreen-600 hover:bg-brandGreen-700 text-white px-4 py-2 rounded-lg font-semibold shadow-md transition transform hover:-translate-y-1">
-                    <i class="fa-solid fa-phone animate-pulse"></i>
-                    <span>০১৭১৫-১৬৭৪৯৮</span>
+    <header class="fixed w-full z-50 bg-cream/90 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-farm-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center gap-3">
+                    <div class="bg-white p-1.5 rounded-xl shadow-sm border border-farm-100">
+                        <img src="edited-image.jpg" alt="Logo" class="h-12 w-auto object-contain rounded-lg" onerror="this.src='https://placehold.co/100x100/1d4533/ffffff?text=Logo'">
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-farm-900 leading-none">মোল্লা এগ্রো অ্যান্ড</h1>
+                        <span class="text-xs font-semibold text-farm-600 tracking-wider">ডেইরী ফার্ম</span>
+                    </div>
                 </a>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-farm-600 font-semibold transition">হোম</a>
+                    <a href="#about" class="text-gray-700 hover:text-farm-600 font-semibold transition">আমাদের সম্পর্কে</a>
+                    <a href="#order" class="text-gray-700 hover:text-farm-600 font-semibold transition">দুধের অর্ডার</a>
+                    <a href="#shop" class="text-gray-700 hover:text-farm-600 font-semibold transition">গরুর হাট</a>
+                    <a href="#contact" class="text-gray-700 hover:text-farm-600 font-semibold transition">যোগাযোগ</a>
+                </nav>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-farm-900 focus:outline-none text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-farm-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-farm-600 hover:bg-farm-50">হোম</a>
+                <a href="#about" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-farm-600 hover:bg-farm-50">আমাদের সম্পর্কে</a>
+                <a href="#order" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-farm-600 hover:bg-farm-50">দুধের অর্ডার</a>
+                <a href="#shop" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-farm-600 hover:bg-farm-50">গরুর হাট</a>
+                <a href="#contact" class="mobile-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-farm-600 hover:bg-farm-50">যোগাযোগ</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-brandGreen-900 via-brandGreen-800 to-emerald-950 text-white py-16 md:py-24 overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-8 items-center">
-            
-            <div data-aos="fade-right" data-aos-duration="1000">
-                <span class="inline-block bg-brandGold-500 text-slate-900 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide mb-4 shadow-lg" data-aos="zoom-in" data-aos-delay="300">
-                    ১০০% খাঁটি ও প্রাকৃতিক
-                </span>
-                <h1 class="text-3xl md:text-5xl font-extrabold leading-snug mb-4 drop-shadow-md">
-                    প্রাকৃতিক পরিবেশে লালিত-পালিত অর্গানিক গরু ও খাঁটি দুধ
-                </h1>
-                <p class="text-emerald-100 text-base md:text-lg mb-8 leading-relaxed">
-                    নোয়াখালীর সেনবাগে আমাদের নিজস্ব ফার্মে বৈজ্ঞানিক ও প্রাকৃতিক উপায়ে লালন-পালন করা হয় প্রজনন ও কোরবানির ষাঁড়, গাভী এবং সরবরাহ করা হয় ১০০% বিশুদ্ধ দুধ।
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#cattle" class="bg-brandGold-500 hover:bg-brandGold-600 text-slate-950 font-bold px-6 py-3 rounded-lg shadow-lg transition flex items-center gap-2 transform hover:-translate-y-1">
-                        <span>গরু দেখুন</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#milk" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold px-6 py-3 rounded-lg backdrop-blur transition flex items-center gap-2 transform hover:-translate-y-1">
-                        <i class="fa-solid fa-bottle-droplet text-brandGold-400"></i>
-                        <span>দুধের হিসাব ও অর্ডার</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="relative flex justify-center" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
-                <div class="bg-emerald-800/50 p-4 rounded-2xl border border-emerald-500/30 backdrop-blur shadow-2xl transform hover:scale-105 transition duration-500">
-                    <img src="Mollah Agro Bangla Logo.jpg" alt="মোল্লা এগ্রো লোগো" class="rounded-xl w-full max-w-md object-cover shadow-lg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=800&q=80';">
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Redesigned Stunning Front View (Hero Section) -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-farm-50 via-cream to-cream overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-farm-200/50 blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-farm-300/30 blur-3xl -z-10"></div>
 
-    <!-- Services Highlights -->
-    <section id="services" class="py-16 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2">আমাদের সেবাসমূহ</h2>
-                <div class="w-16 h-1 bg-brandGold-500 mx-auto rounded"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-emerald-50/50 p-6 rounded-xl border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-brandGreen-600 text-white rounded-lg flex items-center justify-center text-2xl mb-4 shadow-md">
-                        <i class="fa-solid fa-cow"></i>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6" data-aos="fade-right">
+                    <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-farm-100 border border-farm-200 text-farm-800 text-sm font-bold shadow-sm">
+                        <i class="fa-solid fa-award text-farm-600"></i> সেনবাগের ১ নম্বর বিশ্বস্ত আদর্শ খামার
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">কোরবানি ও প্রজনন ষাঁড়</h3>
-                    <p class="text-gray-650 text-sm leading-relaxed">
-                        সম্পূর্ণ স্টেরয়েডমুক্ত, সম্পূর্ণ নিজস্ব জমিতে উৎপাদিত ঘাস ও পুষ্টিকর খৈল-ভূষি খাইয়ে লালন-পালন করা তাজা ষাঁড়।
-                    </p>
-                </div>
-
-                <div class="bg-emerald-50/50 p-6 rounded-xl border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-brandGold-500 text-slate-900 rounded-lg flex items-center justify-center text-2xl mb-4 shadow-md">
-                        <i class="fa-solid fa-whiskey-glass"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">১০০% খাঁটি গরুর দুধ</h3>
-                    <p class="text-gray-650 text-sm leading-relaxed">
-                        কোনোরূপ ভেজাল বা কেমিক্যাল ছাড়া প্রতিদিনের সদ্য দোহনকৃত পুষ্টিকর ফ্রেশ গাভীর দুধ সরবরাহ।
-                    </p>
-                </div>
-
-                <div class="bg-emerald-50/50 p-6 rounded-xl border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 bg-brandGreen-600 text-white rounded-lg flex items-center justify-center text-2xl mb-4 shadow-md">
-                        <i class="fa-solid fa-house-chimney-window"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">ফার্ম ভিজিট ও বুকিং</h3>
-                    <p class="text-gray-650 text-sm leading-relaxed">
-                        সরাসরি সেনবাগের ফার্মে এসে পছন্দমতো গরু যাচাই ও যাচাই বাছাই করে অর্ডার নিশ্চিত করার সুবিধা।
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cattle Catalog -->
-    <section id="cattle" class="py-16 bg-gray-50 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10" data-aos="zoom-in">
-                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2">বর্তমানে পাওয়া যাচ্ছে যেসব গরু</h2>
-                <p class="text-gray-600">পছন্দের গরুটি নির্বাচন করে সরাসরি কার্টে যুক্ত বা কল করুন</p>
-                <div class="w-20 h-1 bg-brandGreen-600 mx-auto rounded mt-3"></div>
-            </div>
-
-            <!-- Cattle Grid -->
-            <div id="cattle-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Javascript will inject cattle cards here with AOS attributes -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Milk Calculator & Ordering -->
-    <section id="milk" class="py-16 bg-gradient-to-br from-emerald-900 to-brandGreen-900 text-white overflow-hidden relative">
-        <div class="absolute top-0 right-0 p-10 opacity-10">
-            <i class="fa-solid fa-bottle-droplet text-9xl"></i>
-        </div>
-        
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-10" data-aos="fade-down">
-                <span class="bg-brandGold-500 text-slate-950 font-bold px-3 py-1 rounded-full text-xs uppercase shadow">অনলাইন দুধ অর্ডার</span>
-                <h2 class="text-2xl md:text-4xl font-bold mt-3 mb-2">দুধের হিসাব ক্যালকুলেটর (দুধ ক্রয়)</h2>
-                <p class="text-emerald-200 text-sm mt-1">সর্বনিম্ন ৫ লিটার থেকে সর্বোচ্চ ২২৫ লিটার পর্যন্ত ডেলিভারি সুবিধা</p>
-            </div>
-
-            <div class="bg-white text-gray-800 rounded-2xl p-6 md:p-8 shadow-2xl transform transition hover:shadow-emerald-500/30" data-aos="fade-up" data-aos-duration="800">
-                <div class="mb-6">
-                    <label class="block text-sm font-bold text-gray-700 mb-2">দৈনিক দুধের পরিমাণ: <span id="milk-val-display" class="text-brandGreen-700 text-xl font-extrabold">১৫</span> লিটার</label>
-                    <input type="range" id="milk-slider" min="5" max="225" value="15" step="1" oninput="updateMilkCalc()" class="w-full h-3 bg-emerald-100 rounded-lg appearance-none cursor-pointer accent-brandGreen-600">
-                    <div class="flex justify-between text-xs text-gray-500 mt-2 font-semibold">
-                        <span>৫ লিটার (Min)</span>
-                        <span>১০০ লিটার</span>
-                        <span>২২৫ লিটার (Max)</span>
-                    </div>
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-sm font-bold text-gray-700 mb-2">সময়কাল নির্বাচন করুন:</label>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                        <button type="button" onclick="setDuration(1)" class="dur-btn border-2 border-emerald-600 text-emerald-700 bg-emerald-50 py-2 rounded-lg font-bold text-sm transition transform hover:scale-105 active:scale-95 shadow-sm">১ দিন</button>
-                        <button type="button" onclick="setDuration(7)" class="dur-btn border-2 border-gray-200 text-gray-600 py-2 rounded-lg font-bold text-sm transition transform hover:scale-105 active:scale-95 hover:bg-gray-50 shadow-sm">৭ দিন</button>
-                        <button type="button" onclick="setDuration(15)" class="dur-btn border-2 border-gray-200 text-gray-600 py-2 rounded-lg font-bold text-sm transition transform hover:scale-105 active:scale-95 hover:bg-gray-50 shadow-sm">১৫ দিন</button>
-                        <button type="button" onclick="setDuration(30)" class="dur-btn border-2 border-gray-200 text-gray-600 py-2 rounded-lg font-bold text-sm transition transform hover:scale-105 active:scale-95 hover:bg-gray-50 shadow-sm">১ মাস (৩০ দিন)</button>
-                    </div>
-                </div>
-
-                <div class="bg-emerald-50 p-5 rounded-xl border border-emerald-200 mb-6 flex flex-wrap justify-between items-center gap-4 transition-all duration-300">
-                    <div>
-                        <span class="text-xs text-gray-500 block font-semibold mb-1">মোট আনুমানিক দুধ</span>
-                        <span id="total-liters-display" class="text-xl font-bold text-brandGreen-800 transition-all">১৫ লিটার</span>
-                    </div>
-                    <div class="text-right">
-                        <span class="text-xs text-gray-500 block font-semibold mb-1">প্রতি লিটার ৳১১০ হিসাব</span>
-                        <span id="total-price-display" class="text-3xl font-black text-brandGold-600 transition-all inline-block">৳১,৬৫০</span>
-                    </div>
-                </div>
-
-                <button onclick="addMilkToCart()" class="w-full bg-brandGreen-600 hover:bg-brandGreen-700 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-lg transform hover:-translate-y-1 hover:shadow-xl active:translate-y-0">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <span>দুধ কার্টে যোগ করুন (Add to Cart)</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Farm Visit Form -->
-    <section id="visit" class="py-16 bg-white overflow-hidden">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10" data-aos="fade-up">
-                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-2">ফার্ম পরিদর্শনের অনলাইন আবেদন</h2>
-                <p class="text-gray-600">আপনি সরাসরি আমাদের নোয়াখালী ফার্মে এসে পরিবেশ ও গরু দেখে যেতে পারেন</p>
-                <div class="w-16 h-1 bg-brandGold-500 mx-auto rounded mt-3"></div>
-            </div>
-
-            <form onsubmit="handleVisitSubmit(event)" class="bg-gray-50 p-6 md:p-10 rounded-2xl border border-gray-200 shadow-xl space-y-5" data-aos="zoom-in-up" data-aos-duration="800">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">আপনার নাম *</label>
-                        <input type="text" required placeholder="উদাহরণ: মোঃ কবির হোসেন" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition shadow-sm hover:border-gray-400 bg-white">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">মোবাইল নম্বর *</label>
-                        <input type="tel" required placeholder="017XXXXXXXX" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition shadow-sm hover:border-gray-400 bg-white">
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">পরিদর্শনের সম্ভাব্য তারিখ *</label>
-                        <input type="date" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition shadow-sm text-gray-700 hover:border-gray-400 bg-white">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">দর্শনার্থীর সংখ্যা</label>
-                        <input type="number" min="1" value="1" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition shadow-sm hover:border-gray-400 bg-white">
-                    </div>
-                </div>
-                
-                <button type="submit" class="w-full bg-brandGreen-600 hover:bg-brandGreen-700 text-white font-bold py-4 mt-4 rounded-xl shadow-md transition transform hover:-translate-y-1 text-lg flex justify-center items-center gap-2">
-                    <i class="fa-regular fa-calendar-check"></i> আবেদন জমা দিন
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Contact & Map -->
-    <section id="contact" class="py-16 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div data-aos="fade-right">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 border-b-2 border-brandGold-500 inline-block pb-2">আমাদের সাথে যোগাযোগের ঠিকানা</h2>
                     
-                    <div class="space-y-5 mt-4">
-                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
-                            <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center text-brandGreen-600 text-xl shrink-0 group-hover:scale-110 transition">
-                                <i class="fa-solid fa-user-gear"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">ফার্ম ম্যানেজার</span>
-                                <span class="font-bold text-lg text-gray-900">তানজিন (Tanzin)</span>
-                            </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-farm-900 leading-[1.15]">
+                        খাঁটি দুধ ও সুস্থ গবাদিপশুর <br> <span class="text-farm-600">নিরাপদ ঠিকানা</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        মোল্লা এগ্রো অ্যান্ড ডেইরী ফার্মে আপনাকে স্বাগতম। শতভাগ প্রাকৃতিকভাবে লালিত গবাদিপশু এবং ফরমালিন ও ভেজালমুক্ত তাজা দুধ এখন সরাসরি খামার থেকে আপনার ঘরে।
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#order" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-2xl text-white bg-farm-600 hover:bg-farm-700 shadow-xl shadow-farm-600/30 transform transition hover:-translate-y-1">
+                            <i class="fa-solid fa-bottle-droplet mr-2"></i> দুধ অর্ডার করুন
+                        </a>
+                        <a href="#shop" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-2xl text-farm-800 bg-white border-2 border-farm-200 hover:border-farm-600 hover:bg-farm-50 shadow-md transform transition hover:-translate-y-1">
+                            <i class="fa-solid fa-cow mr-2 text-farm-600"></i> গরুর হাট দেখুন
+                        </a>
+                    </div>
+
+                    <div class="pt-6 border-t border-farm-200/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl md:text-3xl font-black text-farm-900">১০০%</p>
+                            <p class="text-xs text-gray-500 font-medium">প্রাকৃতিক ও খাঁটি</p>
                         </div>
-                        
-                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
-                            <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center text-brandGreen-600 text-xl shrink-0 group-hover:scale-110 transition">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">ফোন / হোয়াটসঅ্যাপ</span>
-                                <a href="tel:01715167498" class="text-brandGreen-700 font-bold text-xl hover:underline block">01715-167498</a>
-                            </div>
+                        <div>
+                            <p class="text-2xl md:text-3xl font-black text-farm-900">০%</p>
+                            <p class="text-xs text-gray-500 font-medium">স্টেরয়েড বা ইনজেকশন</p>
                         </div>
-                        
-                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300 group">
-                            <div class="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center text-brandGreen-600 text-xl shrink-0 group-hover:scale-110 transition">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-gray-500 font-bold uppercase tracking-wider block mb-1">লোকেশন</span>
-                                <span class="font-semibold text-gray-800 leading-relaxed">উত্তর মোহাম্মদপুর, সেনবাগ<br>নোয়াখালী, বাংলাদেশ</span>
-                            </div>
+                        <div>
+                            <p class="text-2xl md:text-3xl font-black text-farm-900">ফ্রি</p>
+                            <p class="text-xs text-gray-500 font-medium">সেনবাগে হোম ডেলিভারি</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Map Embed -->
-                <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white h-96 relative group" data-aos="fade-left">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58728.85741824193!2d91.20573985!3d22.9868731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375352cbb935bd6f%3A0xbbfd1186b1f24d98!2sSenbagh!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="filter transition duration-500 grayscale-0 hover:grayscale-0"></iframe>
-                    <div class="absolute inset-0 bg-brandGreen-900/5 pointer-events-none group-hover:bg-transparent transition duration-300"></div>
+                <div class="lg:col-span-5 relative" data-aos="fade-left">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute inset-0 bg-farm-600 rounded-3xl transform rotate-3 scale-105 opacity-20"></div>
+                        <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Farm Featured Cow" class="relative rounded-3xl shadow-2xl w-full object-cover h-[420px] border-4 border-white">
+                        
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-farm-100">
+                            <div class="bg-farm-600 text-white p-3 rounded-xl">
+                                <i class="fa-solid fa-phone-volume text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 font-semibold">সরাসরি যোগাযোগ</p>
+                                <a href="tel:01715167498" class="text-base font-bold text-farm-900 hover:text-farm-600">01715-167498</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section class="py-16 bg-white border-b border-farm-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-farm-50 p-6 rounded-2xl text-center border border-farm-100 hover:shadow-xl hover:-translate-y-2 transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm text-farm-600 mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-leaf text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-farm-900 mb-2">১০০% প্রাকৃতিক খাদ্য</h3>
+                    <p class="text-gray-600 text-sm">আমাদের নিজস্ব খামারে প্রস্তুতকৃত ১০০% প্রাকৃতিক খাবার সরবরাহ করা হয়।</p>
+                </div>
+                <div class="bg-farm-50 p-6 rounded-2xl text-center border border-farm-100 hover:shadow-xl hover:-translate-y-2 transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm text-farm-600 mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-shield-virus text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-farm-900 mb-2">স্টেরয়েড ও ইনজেকশন মুক্ত</h3>
+                    <p class="text-gray-600 text-sm">কোনো ক্ষতিকর ইনজেকশন বা কৃত্রিম মোটাতাজাকরণ প্রক্রিয়া ব্যবহার করা হয় না।</p>
+                </div>
+                <div class="bg-farm-50 p-6 rounded-2xl text-center border border-farm-100 hover:shadow-xl hover:-translate-y-2 transition duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm text-farm-600 mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-stethoscope text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-farm-900 mb-2">নিয়মিত স্বাস্থ্য পরীক্ষা</h3>
+                    <p class="text-gray-600 text-sm">গবাদিপশুর স্বাস্থ্য নিয়মিত পরীক্ষা প্রোপাইটর তানজিনের তত্ত্বাবধানে থাকে।</p>
+                </div>
+                <div class="bg-farm-50 p-6 rounded-2xl text-center border border-farm-100 hover:shadow-xl hover:-translate-y-2 transition duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-white shadow-sm text-farm-600 mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-eye text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-farm-900 mb-2">সরাসরি খামার পরিদর্শন</h3>
+                    <p class="text-gray-600 text-sm">গ্রাহকরা যেকোনো সময় খামারে এসে সরাসরি যাচাই করে পণ্য কিনতে পারবেন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-in">
+                <span class="text-farm-600 font-bold tracking-wider uppercase text-sm">Online Order</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-farm-900 mt-2">বিশুদ্ধ গাভীর দুধ অর্ডার করুন</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">সরাসরি খামার থেকে ১০০% খাঁটি ও তাজা দুধ পৌঁছে যাবে আপনার ঘরে।</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col-reverse lg:flex-row" data-aos="zoom-in-up">
+                <div class="p-8 lg:w-3/5 lg:p-12">
+                    <form id="orderForm" class="space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-4">ডেলিভারি তথ্য দিন</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">আপনার নাম <span class="text-red-500">*</span></label>
+                                <input type="text" id="customerName" required class="w-full px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:ring-2 focus:ring-farm-500 outline-none transition" placeholder="সম্পূর্ণ নাম">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">মোবাইল নম্বর <span class="text-red-500">*</span></label>
+                                <input type="tel" id="customerPhone" required pattern="[0-9]{11}" class="w-full px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:ring-2 focus:ring-farm-500 outline-none transition" placeholder="01XXXXXXXXX">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">জেলা/এলাকা <span class="text-red-500">*</span></label>
+                                <select id="customerArea" class="w-full px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:ring-2 focus:ring-farm-500 outline-none transition cursor-pointer">
+                                    <option value="সেনবাগ">সেনবাগ (ফ্রি ডেলিভারি)</option>
+                                    <option value="নোয়াখালী (অন্যান্য)">নোয়াখালী (অন্যান্য উপজেলা)</option>
+                                    <option value="অন্যান্য জেলা">অন্যান্য জেলা (আলোচনা সাপেক্ষে)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">বিস্তারিত ঠিকানা <span class="text-red-500">*</span></label>
+                                <input type="text" id="customerAddress" required class="w-full px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:ring-2 focus:ring-farm-500 outline-none transition" placeholder="গ্রাম/মহল্লা, বাসা নং">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">ডেলিভারির শুরুর তারিখ <span class="text-red-500">*</span></label>
+                                <input type="date" id="customerDate" required class="w-full px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:ring-2 focus:ring-farm-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">পছন্দের সময়</label>
+                                <select id="customerTime" class="w-full px-4 py-3 bg-gray-50 rounded-xl border border-gray-200 focus:bg-white focus:ring-2 focus:ring-farm-500 outline-none transition cursor-pointer">
+                                    <option value="সকাল (৭টা - ১০টা)">সকাল (৭টা - ১০টা)</option>
+                                    <option value="বিকাল (৪টা - ৬টা)">বিকাল (৪টা - ৬টা)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-4">
+                            <button type="submit" class="w-full bg-farm-600 hover:bg-farm-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> অর্ডার নিশ্চিত করুন
+                            </button>
+                            <p class="text-center text-xs text-gray-500 mt-3"><i class="fa-solid fa-shield-halved text-farm-500"></i> আপনার তথ্য সম্পূর্ণ নিরাপদ।</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bg-farm-900 text-white p-8 lg:w-2/5 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-farm-800 opacity-50 blur-3xl"></div>
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold mb-8 flex items-center text-farm-100">
+                            <i class="fa-solid fa-calculator mr-3 text-farm-400"></i> অর্ডার ক্যালকুলেটর
+                        </h3>
+                        
+                        <div class="space-y-8">
+                            <div class="bg-farm-800/50 p-5 rounded-2xl border border-farm-700">
+                                <div class="flex justify-between items-end mb-4">
+                                    <label class="text-farm-200 font-medium">প্রতিদিন পরিমাণ</label>
+                                    <div class="text-2xl font-bold text-white"><span id="litersDisplay">5</span> <span class="text-sm font-normal text-farm-200">লিটার</span></div>
+                                </div>
+                                <input type="range" id="milkLiters" min="5" max="120" value="5" step="1">
+                                <div class="flex justify-between text-xs text-farm-400 mt-2 font-medium">
+                                    <span>মিনিমাম ৫ লিটার</span>
+                                    <span>ম্যাক্সিমাম ১২০ লিটার</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-farm-800/50 p-5 rounded-2xl border border-farm-700">
+                                <label class="block text-farm-200 font-medium mb-3">কয়দিনের জন্য নিবেন?</label>
+                                <div class="grid grid-cols-4 gap-2">
+                                    <button type="button" class="duration-btn active-duration py-2 rounded-lg border-2 border-white bg-white text-farm-900 font-bold transition" data-days="1">১ দিন</button>
+                                    <button type="button" class="duration-btn py-2 rounded-lg border-2 border-farm-600 text-farm-100 hover:border-farm-400 hover:bg-farm-800 font-semibold transition" data-days="7">৭ দিন</button>
+                                    <button type="button" class="duration-btn py-2 rounded-lg border-2 border-farm-600 text-farm-100 hover:border-farm-400 hover:bg-farm-800 font-semibold transition" data-days="15">১৫ দিন</button>
+                                    <button type="button" class="duration-btn py-2 rounded-lg border-2 border-farm-600 text-farm-100 hover:border-farm-400 hover:bg-farm-800 font-semibold transition" data-days="30">৩০ দিন</button>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 bg-gradient-to-br from-farm-700 to-farm-800 rounded-2xl p-6 shadow-inner border border-farm-600 relative overflow-hidden">
+                                <i class="fa-solid fa-coins absolute right-4 bottom-4 text-6xl text-farm-600 opacity-20 transform -rotate-12"></i>
+                                
+                                <div class="flex justify-between text-farm-100 mb-2 text-sm">
+                                    <span>প্রতি লিটার মূল্য:</span>
+                                    <span class="font-semibold text-white">৳১১০</span>
+                                </div>
+                                <div class="flex justify-between text-farm-100 mb-3 text-sm">
+                                    <span>মোট পরিমাণ:</span>
+                                    <span class="font-semibold text-white"><span id="summaryLiters">5</span> লিটার × <span id="summaryDays">1</span> দিন</span>
+                                </div>
+                                <div class="border-t border-farm-500/50 my-4"></div>
+                                <div class="flex justify-between items-end">
+                                    <span class="text-lg font-medium text-farm-100">সর্বমোট বিল:</span>
+                                    <span class="text-4xl font-extrabold text-white tracking-tight">৳<span id="totalPrice">550</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Livestock / Cattle Shop Section with 4 Original + 4 New Cattle Added -->
+    <section id="shop" class="py-20 bg-white border-t border-farm-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-farm-600 font-bold tracking-wider uppercase text-sm">Livestock Market</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-farm-900 mt-2">খামারের গবাদিপশু (গরুর হাট)</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">কুরবানী, পারিবারিক অনুষ্ঠান কিংবা খামারের প্রয়োজনে সুস্থ ও উন্নত জাতের গবাদিপশু ক্রয় করুন।</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Original Cattle 1 -->
+                <div class="bg-cream rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="দেশী গরু" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-farm-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">গরু</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-farm-900 mb-2">সুস্থ দেশী গরু</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">সম্পূর্ণ সুস্থ ও পরীক্ষিত দেশী জাতের গরু। প্রাকৃতিক খাবারে লালিত।</p>
+                        <div class="flex gap-2 mt-auto">
+                            <button onclick="openAnimalModal('সুস্থ দেশী গরু', 'গরু', '২০০ - ২৫০ কেজি', '২.৫ বছর', 'আলোচনা সাপেক্ষে', 'সম্পূর্ণ সুস্থ ও পরীক্ষিত, স্টেরয়েড মুক্ত', 'https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" class="flex-1 bg-white text-farm-700 border border-farm-600 py-2.5 rounded-lg font-bold hover:bg-farm-50 transition text-sm">বিস্তারিত</button>
+                            <a href="tel:01715167498" class="flex-1 bg-farm-600 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center hover:bg-farm-700 transition shadow text-sm"><i class="fa-solid fa-phone mr-1.5 text-xs"></i> যোগাযোগ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Original Cattle 2 -->
+                <div class="bg-cream rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="উন্নত জাতের ষাঁড়" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-farm-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">ষাঁড়</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-farm-900 mb-2">উন্নত জাতের ষাঁড়</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">কুরবানীর জন্য উপযুক্ত, আকর্ষণীয় গঠন ও স্বাস্থ্যবান বড় ষাঁড়।</p>
+                        <div class="flex gap-2 mt-auto">
+                            <button onclick="openAnimalModal('উন্নত জাতের ষাঁড়', 'ষাঁড়', '৩৫০ - ৪০০ কেজি', '৩ বছর', 'আলোচনা সাপেক্ষে', 'স্টেরয়েড মুক্ত, প্রাকৃতিক খাদ্যে পালিত', 'https://images.unsplash.com/photo-1596733430284-f7437764b1a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" class="flex-1 bg-white text-farm-700 border border-farm-600 py-2.5 rounded-lg font-bold hover:bg-farm-50 transition text-sm">বিস্তারিত</button>
+                            <a href="tel:01715167498" class="flex-1 bg-farm-600 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center hover:bg-farm-700 transition shadow text-sm"><i class="fa-solid fa-phone mr-1.5 text-xs"></i> যোগাযোগ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Original Cattle 3 -->
+                <div class="bg-cream rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://images.unsplash.com/photo-1529651737248-dad5e287768e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="অস্ট্রেলিয়ান গাভী" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-farm-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">গাভী</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-farm-900 mb-2">অস্ট্রেলিয়ান গাভী</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">উচ্চ দুধ উৎপাদনশীল উন্নত জাতের সুস্থ গাভী। খামারের জন্য সেরা।</p>
+                        <div class="flex gap-2 mt-auto">
+                            <button onclick="openAnimalModal('অস্ট্রেলিয়ান গাভী', 'গাভী', '৩৫০ কেজি', '৪ বছর', 'আলোচনা সাপেক্ষে', 'দৈনিক ১৫-১৮ লিটার দুধ প্রদানে সক্ষম', 'https://images.unsplash.com/photo-1529651737248-dad5e287768e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" class="flex-1 bg-white text-farm-700 border border-farm-600 py-2.5 rounded-lg font-bold hover:bg-farm-50 transition text-sm">বিস্তারিত</button>
+                            <a href="tel:01715167498" class="flex-1 bg-farm-600 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center hover:bg-farm-700 transition shadow text-sm"><i class="fa-solid fa-phone mr-1.5 text-xs"></i> যোগাযোগ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Original Cattle 4 -->
+                <div class="bg-cream rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://images.unsplash.com/photo-1605374495811-1335b75bd69c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="দেশী মহিষ" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-farm-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">মহিষ</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-farm-900 mb-2">উন্নত দেশী মহিষ</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">মাংস ও দুধ উৎপাদনের জন্য শতভাগ সুস্থ ও কর্মক্ষম বড় মহিষ।</p>
+                        <div class="flex gap-2 mt-auto">
+                            <button onclick="openAnimalModal('উন্নত দেশী মহিষ', 'মহিষ', '৪৫০ - ৫০০ কেজি', '৩.৫ বছর', 'আলোচনা সাপেক্ষে', 'শতভাগ সুস্থ ও কর্মক্ষম, নিয়মিত ভ্যাকসিন প্রাপ্ত', 'https://images.unsplash.com/photo-1605374495811-1335b75bd69c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" class="flex-1 bg-white text-farm-700 border border-farm-600 py-2.5 rounded-lg font-bold hover:bg-farm-50 transition text-sm">বিস্তারিত</button>
+                            <a href="tel:01715167498" class="flex-1 bg-farm-600 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center hover:bg-farm-700 transition shadow text-sm"><i class="fa-solid fa-phone mr-1.5 text-xs"></i> যোগাযোগ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW ADDED CATTLE 1: Shahiwal Cow -->
+                <div class="bg-cream rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="শাহীওয়াল গাভী" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-farm-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">শাহীওয়াল</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-farm-900 mb-2">খাঁটি শাহীওয়াল গাভী</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">শান্ত স্বভাবের এবং পুষ্টিকর দুধের জন্য বিখ্যাত শাহীওয়াল জাতের গাভী।</p>
+                        <div class="flex gap-2 mt-auto">
+                            <button onclick="openAnimalModal('খাঁটি শাহীওয়াল গাভী', 'গাভী', '৩২০ কেজি', '৩ বছর', 'আলোচনা সাপেক্ষে', 'শান্ত স্বভাব, খাঁটি ও পুষ্টিকর দুধ প্রদানে সক্ষম', 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" class="flex-1 bg-white text-farm-700 border border-farm-600 py-2.5 rounded-lg font-bold hover:bg-farm-50 transition text-sm">বিস্তারিত</button>
+                            <a href="tel:01715167498" class="flex-1 bg-farm-600 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center hover:bg-farm-700 transition shadow text-sm"><i class="fa-solid fa-phone mr-1.5 text-xs"></i> যোগাযোগ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW ADDED CATTLE 2: Friesian Bull -->
+                <div class="bg-cream rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ফ্রিজিয়ান ষাঁড়" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-farm-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">ফ্রিজিয়ান ষাঁড়</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-farm-900 mb-2">বিশাল ফ্রিজিয়ান ষাঁড়</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">অত্যন্ত মাংসবহুল এবং কুরবানীর হাটের জন্য আকর্ষণের কেন্দ্রবিন্দু।</p>
+                        <div class="flex gap-2 mt-auto">
+                            <button onclick="openAnimalModal('বিশাল ফ্রিজিয়ান ষাঁড়', 'ষাঁড়', '৪০০ - ৪৫০ কেজি', '৩.৫ বছর', 'আলোচনা সাপেক্ষে', 'উন্নত গঠন, সম্পূর্ণ রোগমুক্ত ও মোটাতাজাকরণ মুক্ত', 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" class="flex-1 bg-white text-farm-700 border border-farm-600 py-2.5 rounded-lg font-bold hover:bg-farm-50 transition text-sm">বিস্তারিত</button>
+                            <a href="tel:01715167498" class="flex-1 bg-farm-600 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center hover:bg-farm-700 transition shadow text-sm"><i class="fa-solid fa-phone mr-1.5 text-xs"></i> যোগাযোগ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW ADDED CATTLE 3: Crossbreed Cow -->
+                <div class="bg-cream rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://images.unsplash.com/photo-1545671913-b89ac1b4ac10?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="শংকর জাতের গাভী" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-farm-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">শংকর জাত</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-farm-900 mb-2">শংকর জাতের গাভী</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">অতিরিক্ত দুধ দেওয়ার ক্ষমতাসম্পন্ন এবং খামারের জন্য অত্যন্ত লাভজনক।</p>
+                        <div class="flex gap-2 mt-auto">
+                            <button onclick="openAnimalModal('শংকর জাতের গাভী', 'গাভী', '৩০০ কেজি', '৩ বছর', 'আলোচনা সাপেক্ষে', 'প্রতিদিন ১২-১৪ লিটার দুধ দেয়, সুস্বাস্থ্যের অধিকারী', 'https://images.unsplash.com/photo-1545671913-b89ac1b4ac10?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" class="flex-1 bg-white text-farm-700 border border-farm-600 py-2.5 rounded-lg font-bold hover:bg-farm-50 transition text-sm">বিস্তারিত</button>
+                            <a href="tel:01715167498" class="flex-1 bg-farm-600 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center hover:bg-farm-700 transition shadow text-sm"><i class="fa-solid fa-phone mr-1.5 text-xs"></i> যোগাযোগ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW ADDED CATTLE 4: Strong Local Bull -->
+                <div class="bg-cream rounded-2xl shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl transition duration-300 flex flex-col group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="বলিষ্ঠ ষাঁড়" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-farm-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">দেশী ষাঁড়</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-farm-900 mb-2">বলিষ্ঠ দেশী ষাঁড়</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-2 flex-grow">সম্পূর্ণ দেশীয় আবহাওয়ায় পালিত শক্তসমর্থ ও নাদুস-নুদুস ষাঁড়।</p>
+                        <div class="flex gap-2 mt-auto">
+                            <button onclick="openAnimalModal('বলিষ্ঠ দেশী ষাঁড়', 'ষাঁড়', '২৮০ - ৩০০ কেজি', '২.৮ বছর', 'আলোচনা সাপেক্ষে', 'শতভাগ দেশী খাবার খাইয়ে লালিত, কোনো ক্ষতিকর উপাদান নেই', 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" class="flex-1 bg-white text-farm-700 border border-farm-600 py-2.5 rounded-lg font-bold hover:bg-farm-50 transition text-sm">বিস্তারিত</button>
+                            <a href="tel:01715167498" class="flex-1 bg-farm-600 text-white py-2.5 rounded-lg font-bold text-center flex items-center justify-center hover:bg-farm-700 transition shadow text-sm"><i class="fa-solid fa-phone mr-1.5 text-xs"></i> যোগাযোগ</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Policy Section -->
+    <section class="py-20 bg-farm-900 text-white relative overflow-hidden" id="delivery">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#3ba573 2px, transparent 2px); background-size: 30px 30px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-down">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">আমাদের ডেলিভারি পলিসি</h2>
+                <div class="w-24 h-1.5 bg-farm-400 mx-auto rounded-full"></div>
+                <p class="mt-4 text-farm-100 max-w-2xl mx-auto text-lg">গ্রাহকের দোরগোড়ায় সতেজ পণ্য পৌঁছে দিতে আমরা অঙ্গীকারবদ্ধ।</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-farm-800/80 backdrop-blur-sm p-8 rounded-2xl border border-farm-600 text-center hover:-translate-y-2 transition duration-300" data-aos="flip-left" data-aos-delay="100">
+                    <div class="mx-auto bg-farm-700 w-20 h-20 rounded-full flex items-center justify-center mb-6 border-4 border-farm-600 shadow-lg">
+                        <i class="fa-solid fa-location-dot text-3xl text-farm-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">সেনবাগ ও আশেপাশে</h3>
+                    <p class="text-farm-100 leading-relaxed mb-4">সেনবাগ এলাকায় প্রদান করা হচ্ছে সম্পূর্ণ <span class="bg-green-500 text-white px-2 py-0.5 rounded font-bold">ফ্রি ডেলিভারি</span>।</p>
+                    <p class="text-sm text-farm-300 border-t border-farm-600 pt-3"><i class="fa-solid fa-circle-check mr-1"></i> পণ্য বুঝে পেয়ে মূল্য পরিশোধ করুন।</p>
+                </div>
+                
+                <div class="bg-farm-800/80 backdrop-blur-sm p-8 rounded-2xl border border-farm-600 text-center hover:-translate-y-2 transition duration-300" data-aos="flip-left" data-aos-delay="200">
+                    <div class="mx-auto bg-farm-700 w-20 h-20 rounded-full flex items-center justify-center mb-6 border-4 border-farm-600 shadow-lg">
+                        <i class="fa-solid fa-map-location-dot text-3xl text-farm-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">সমগ্র নোয়াখালী জেলা</h3>
+                    <p class="text-farm-100 leading-relaxed mb-4">দুধ ও খামারের অন্যান্য পণ্য সম্পূর্ণ নোয়াখালী জেলায় সযত্নে হোম ডেলিভারি দেওয়া হয়।</p>
+                    <p class="text-sm text-farm-300 border-t border-farm-600 pt-3"><i class="fa-solid fa-truck-fast mr-1"></i> দ্রুত ও নিরাপদ ডেলিভারি ব্যবস্থা।</p>
+                </div>
+                
+                <div class="bg-farm-800/80 backdrop-blur-sm p-8 rounded-2xl border border-farm-600 text-center hover:-translate-y-2 transition duration-300" data-aos="flip-left" data-aos-delay="300">
+                    <div class="mx-auto bg-farm-700 w-20 h-20 rounded-full flex items-center justify-center mb-6 border-4 border-farm-600 shadow-lg">
+                        <i class="fa-solid fa-route text-3xl text-farm-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-white">অন্যান্য জেলা / পাইকারি</h3>
+                    <p class="text-farm-100 leading-relaxed mb-4">বড় অর্ডারের ক্ষেত্রে আলোচনা সাপেক্ষে দেশের যেকোনো স্থানে ডেলিভারি হয়।</p>
+                    <p class="text-sm text-farm-300 border-t border-farm-600 pt-3"><i class="fa-solid fa-money-bill-transfer mr-1"></i> অ্যাডভান্স বুকিং + ক্যাশ অন ডেলিভারি।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative" data-aos="fade-right">
+                    <div class="absolute inset-0 bg-farm-600 rounded-3xl transform translate-x-4 translate-y-4 -z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="About Farm" class="rounded-3xl shadow-2xl w-full border-4 border-white">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4">
+                        <div class="bg-green-100 text-green-600 p-3 rounded-full">
+                            <i class="fa-solid fa-award text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-farm-900 text-lg">১০০% অর্গানিক</p>
+                            <p class="text-sm text-gray-500">গুণগত মান নিশ্চিত</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 space-y-6" data-aos="fade-left">
+                    <span class="text-farm-600 font-bold tracking-wider uppercase text-sm">About Us</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-farm-900 leading-tight">একটি আধুনিক ও আদর্শ খামার</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        <strong class="text-farm-700">মোল্লা এগ্রো অ্যান্ড ডেইরী ফার্ম</strong> একটি বিশ্বস্ত প্রতিষ্ঠান, যা অভিজ্ঞ স্বত্বাধিকারী <strong class="text-farm-700">তানজিন (Tanzin)</strong>-এর প্রত্যক্ষ তত্ত্বাবধানে পরিচালিত। আমাদের লক্ষ্য সম্পূর্ণ প্রাকৃতিকভাবে লালন-পালন করা গবাদিপশু ও খাঁটি দুধ সরবরাহ করা।
+                    </p>
+                    <div class="bg-farm-50 border-l-4 border-farm-500 p-5 rounded-r-xl mt-8">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-map-pin text-farm-600 text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-farm-900 text-lg mb-1">সরাসরি খামার পরিদর্শন করুন</h4>
+                                <p class="text-gray-600 text-sm">উত্তর মোহাম্মদপুর, সেনবাগ, নোয়াখালীতে অবস্থিত আমাদের খামার যেকোনো সময় পরিদর্শন করতে পারেন।</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brandGreen-900 text-white py-10 border-t-4 border-brandGold-500 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <div>
-                <a href="#" class="flex items-center space-x-2 mb-2 justify-center md:justify-start hover:opacity-80 transition">
-                    <span class="text-xl font-bold text-white">মোল্লা এগ্রো</span>
-                </a>
-                <p class="text-emerald-200 text-sm">© ২০২৬ মোল্লা এগ্রো অ্যান্ড ডেইরি ফার্ম। সর্বস্বত্ব সংরক্ষিত।</p>
+    <footer id="contact" class="bg-[#1a1a1a] text-gray-300 py-16 border-t-[6px] border-farm-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="space-y-6">
+                    <div class="bg-white p-2 inline-block rounded-lg shadow-md">
+                        <img src="edited-image.jpg" alt="Logo" class="h-16 w-auto object-contain rounded" onerror="this.src='https://placehold.co/150x50/ffffff/1d4533?text=Logo'">
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">মোল্লা এগ্রো অ্যান্ড ডেইরী ফার্ম</h3>
+                    <p class="text-sm leading-relaxed text-gray-400">বিশুদ্ধ দুধ ও বিশ্বস্ত গবাদিপশুর নির্ভরযোগ্য ঠিকানা। প্রোপাইটর: তানজিন।</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
+                        গুরুত্বপূর্ণ লিংক
+                        <span class="absolute bottom-0 left-0 w-1/2 h-0.5 bg-farm-500 -mb-2"></span>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="hover:text-farm-400 transition flex items-center"><i class="fa-solid fa-angle-right mr-2 text-farm-500 text-sm"></i> হোম</a></li>
+                        <li><a href="#about" class="hover:text-farm-400 transition flex items-center"><i class="fa-solid fa-angle-right mr-2 text-farm-500 text-sm"></i> আমাদের সম্পর্কে</a></li>
+                        <li><a href="#order" class="hover:text-farm-400 transition flex items-center"><i class="fa-solid fa-angle-right mr-2 text-farm-500 text-sm"></i> দুধের অর্ডার</a></li>
+                        <li><a href="#shop" class="hover:text-farm-400 transition flex items-center"><i class="fa-solid fa-angle-right mr-2 text-farm-500 text-sm"></i> গরুর হাট</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
+                        যোগাযোগ
+                        <span class="absolute bottom-0 left-0 w-1/2 h-0.5 bg-farm-500 -mb-2"></span>
+                    </h4>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-farm-500 mt-1 text-lg w-5 text-center"></i>
+                            <span>উত্তর মোহাম্মদপুর, সেনবাগ, নোয়াখালী।</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone-volume text-farm-500 text-lg w-5 text-center"></i>
+                            <a href="tel:01715167498" class="hover:text-farm-400 text-xl font-bold text-white transition tracking-wide">01715-167498</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-6 uppercase tracking-wider relative inline-block">
+                        সোশ্যাল মিডিয়া
+                        <span class="absolute bottom-0 left-0 w-1/2 h-0.5 bg-farm-500 -mb-2"></span>
+                    </h4>
+                    <p class="text-sm mb-5 text-gray-400">আমাদের খামারের আপডেট পেতে ফেসবুক পেজে যুক্ত থাকুন।</p>
+                    <a href="https://www.facebook.com/mollahagroanddairyfarm/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-[#1877F2] text-white py-3 px-6 rounded-lg font-bold hover:bg-[#166FE5] transition shadow-lg w-full group">
+                        <i class="fa-brands fa-facebook-f text-xl group-hover:scale-110 transition"></i> ফেইসবুক পেইজ
+                    </a>
+                </div>
             </div>
             
-            <div class="flex gap-4">
-                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandGold-500 hover:text-slate-900 transition transform hover:scale-110">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brandGold-500 hover:text-slate-900 transition transform hover:scale-110">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
+            <div class="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; <span id="year"></span> Mollah Agro & Dairy Farm. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Developed for Premium Agro Business.</p>
             </div>
         </div>
     </footer>
 
-    <!-- CART SLIDE-OVER MODAL -->
-    <div id="cart-modal" class="fixed inset-0 z-50 hidden flex justify-end">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity opacity-0" id="cart-overlay" onclick="toggleCartModal(false)"></div>
-        <div class="bg-white w-full max-w-md h-full flex flex-col shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out relative z-10" id="cart-panel">
-            
-            <div class="p-5 bg-brandGreen-700 text-white flex justify-between items-center shadow-md">
-                <h3 class="font-bold text-lg flex items-center gap-2"><i class="fa-solid fa-cart-shopping"></i> শপিং কার্ট</h3>
-                <button onclick="toggleCartModal(false)" class="text-white hover:text-brandGold-400 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center transition hover:rotate-90">&times;</button>
-            </div>
-
-            <div id="cart-items-container" class="flex-1 p-5 overflow-y-auto space-y-4 bg-gray-50">
-                <!-- Cart items inserted dynamically -->
-            </div>
-
-            <div class="p-5 border-t bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-20">
-                <div class="flex justify-between items-center text-lg font-bold text-gray-900 mb-4 bg-emerald-50 p-3 rounded-lg border border-emerald-100">
-                    <span>সর্বমোট মূল্য:</span>
-                    <span id="cart-total-price" class="text-brandGreen-700 text-xl font-black transition-all">৳০</span>
-                </div>
-                <button onclick="openCheckoutModal()" class="w-full bg-brandGold-500 hover:bg-brandGold-600 text-slate-950 font-bold py-3.5 rounded-xl shadow-lg transition flex justify-center items-center gap-2 transform hover:-translate-y-1 active:translate-y-0 text-lg">
-                    <span>অর্ডার নিশ্চিত করুন</span>
-                    <i class="fa-solid fa-arrow-right"></i>
+    <!-- Animal Modal Overlay -->
+    <div id="animalModalOverlay" class="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-2xl max-w-lg w-full transform transition-transform duration-300 scale-95" id="animalModalBox">
+            <div class="relative">
+                <img id="modalAnimalImg" src="" alt="Animal Image" class="w-full h-64 object-cover">
+                <button onclick="closeAnimalModal()" class="absolute top-4 right-4 bg-white/90 text-gray-800 w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-white hover:text-red-500 transition">
+                    <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
-        </div>
-    </div>
-
-    <!-- CHECKOUT MODAL -->
-    <div id="checkout-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity opacity-0" id="checkout-overlay"></div>
-        <div class="bg-white rounded-2xl max-w-lg w-full p-0 shadow-2xl max-h-[90vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300 relative z-10 overflow-hidden" id="checkout-panel">
-            
-            <div class="p-5 border-b bg-gray-50 flex justify-between items-center shrink-0">
-                <h3 class="font-bold text-xl text-brandGreen-800 flex items-center gap-2"><i class="fa-solid fa-clipboard-check"></i> চেকআউট ফর্ম</h3>
-                <button onclick="closeCheckoutModal()" class="text-gray-400 hover:text-red-500 w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center transition hover:rotate-90">&times;</button>
-            </div>
-
-            <div class="overflow-y-auto p-6 space-y-5">
-                <div id="checkout-summary" class="bg-emerald-50 p-4 rounded-xl text-sm text-gray-700 space-y-2 border border-emerald-100 shadow-inner">
-                    <!-- Cart summary populated by JS -->
+            <div class="p-8">
+                <h3 id="modalAnimalTitle" class="text-2xl font-extrabold text-farm-900 mb-4">নাম</h3>
+                <div class="space-y-3 mb-8 bg-farm-50 p-5 rounded-xl border border-farm-100">
+                    <p class="flex justify-between border-b border-farm-100 pb-2"><span class="font-semibold text-gray-700">ধরন:</span> <span id="modalAnimalType" class="text-gray-900 font-medium"></span></p>
+                    <p class="flex justify-between border-b border-farm-100 pb-2"><span class="font-semibold text-gray-700">আনুমানিক ওজন:</span> <span id="modalAnimalWeight" class="text-gray-900 font-medium"></span></p>
+                    <p class="flex justify-between border-b border-farm-100 pb-2"><span class="font-semibold text-gray-700">বয়স:</span> <span id="modalAnimalAge" class="text-gray-900 font-medium"></span></p>
+                    <p class="flex justify-between"><span class="font-semibold text-gray-700">স্বাস্থ্যগত অবস্থা:</span> <span id="modalAnimalHealth" class="text-gray-900 font-medium text-right max-w-[60%]"></span></p>
+                    <div class="border-t-2 border-farm-200 my-3"></div>
+                    <p class="flex justify-between items-center"><span class="font-bold text-lg text-farm-900">মূল্য:</span> <span id="modalAnimalPrice" class="text-farm-600 font-bold text-xl"></span></p>
                 </div>
-
-                <form onsubmit="handlePlaceOrder(event)" class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">আপনার নাম *</label>
-                        <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition bg-gray-50 focus:bg-white hover:border-gray-400">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">মোবাইল নাম্বার *</label>
-                        <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition bg-gray-50 focus:bg-white hover:border-gray-400">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">ডেলিভারির সম্পূর্ণ ঠিকানা *</label>
-                        <textarea required rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brandGreen-500 focus:border-brandGreen-500 outline-none transition bg-gray-50 focus:bg-white placeholder-gray-400 hover:border-gray-400" placeholder="এলাকা, উপজেলা, জেলা বিস্তারিত লিখুন"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="w-full bg-brandGreen-600 hover:bg-brandGreen-700 text-white font-bold py-4 mt-2 rounded-xl shadow-lg text-lg transition transform hover:-translate-y-1 flex justify-center items-center gap-2">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        <span>অর্ডার সম্পন্ন করুন</span>
-                    </button>
-                </form>
+                <a href="tel:01715167498" class="w-full bg-farm-600 text-white py-3.5 rounded-xl font-bold text-center flex items-center justify-center hover:bg-farm-700 transition text-lg shadow-lg shadow-farm-600/30">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> কল করুন: 01715-167498
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- SUCCESS POPUP MODAL -->
-    <div id="success-modal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity opacity-0" id="success-overlay"></div>
-        <div class="bg-white rounded-3xl max-w-sm w-full p-8 text-center shadow-2xl transform scale-90 opacity-0 transition-all duration-300 relative z-10" id="success-panel">
-            
-            <div class="w-24 h-24 bg-emerald-100 text-brandGreen-600 rounded-full flex items-center justify-center text-5xl mx-auto mb-6 relative shadow-inner">
-                <i class="fa-solid fa-check relative z-10"></i>
-                <div class="absolute inset-0 rounded-full border-4 border-brandGreen-500 animate-ping opacity-20"></div>
+    <!-- Order Success Modal Overlay -->
+    <div id="orderSuccessModal" class="fixed inset-0 z-[110] bg-farm-900/80 backdrop-blur-sm hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-2xl max-w-md w-full p-8 text-center transform transition-transform duration-300 scale-90" id="successModalBox">
+            <div class="mx-auto w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                <i class="fa-solid fa-check text-5xl text-green-500 animate-[bounce_1s_ease-in-out_infinite]"></i>
             </div>
-            
-            <h3 id="success-title" class="text-2xl font-black text-gray-900 mb-2">ধন্যবাদ!</h3>
-            <p id="success-msg" class="text-gray-600 leading-relaxed mb-8 font-medium"></p>
-            
-            <button onclick="closeSuccessModal()" class="w-full bg-brandGreen-600 hover:bg-brandGreen-700 text-white font-bold py-3.5 rounded-xl transition shadow-lg text-lg transform hover:-translate-y-1">
-                ঠিক আছে
+            <h2 class="text-3xl font-extrabold text-farm-900 mb-2">অর্ডার সফল হয়েছে!</h2>
+            <p class="text-gray-600 mb-6">ধন্যবাদ <strong id="successName" class="text-farm-700"></strong>। আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে।</p>
+            <div class="bg-farm-50 rounded-xl p-4 text-left border border-farm-100 mb-8 space-y-2 text-sm">
+                <p class="text-gray-500 font-semibold mb-2 border-b pb-2 uppercase tracking-wide text-xs">অর্ডার সামারি</p>
+                <div class="flex justify-between"><span class="text-gray-600">পরিমাণ:</span> <strong class="text-gray-800"><span id="successLiters"></span> লিটার/দিন</strong></div>
+                <div class="flex justify-between"><span class="text-gray-600">সময়কাল:</span> <strong class="text-gray-800"><span id="successDays"></span> দিন</strong></div>
+                <div class="flex justify-between"><span class="text-gray-600">ডেলিভারি এলাকা:</span> <strong class="text-gray-800" id="successArea"></strong></div>
+                <div class="border-t border-dashed border-gray-300 my-2"></div>
+                <div class="flex justify-between items-center mt-2"><span class="text-gray-800 font-bold">সর্বমোট বিল:</span> <strong class="text-2xl text-farm-600">৳<span id="successTotal"></span></strong></div>
+            </div>
+            <button onclick="closeSuccessModal()" class="w-full bg-farm-900 text-white py-3.5 rounded-xl font-bold hover:bg-farm-800 transition text-lg shadow-lg">
+                ঠিক আছে, ধন্যবাদ
             </button>
         </div>
     </div>
 
-    <!-- Floating Action Buttons for Mobile -->
-    <div class="fixed bottom-6 right-6 z-30 flex flex-col gap-3">
-        <a href="https://wa.me/8801715167498" target="_blank" class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-[0_4px_14px_0_rgba(34,197,94,0.39)] hover:scale-110 hover:-translate-y-1 transition duration-300">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="tel:01715167498" class="w-14 h-14 bg-brandGreen-700 text-white rounded-full flex items-center justify-center text-2xl shadow-[0_4px_14px_0_rgba(21,128,61,0.39)] hover:scale-110 hover:-translate-y-1 transition duration-300 sm:hidden">
-            <i class="fa-solid fa-phone"></i>
-        </a>
-    </div>
-
-    <!-- AOS JS -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Javascript Logic -->
     <script>
-        // Initialize AOS Animation
-        AOS.init({
-            once: true,
-            offset: 50,
-            duration: 700,
-            easing: 'ease-out-cubic'
+        if (typeof AOS !== 'undefined') {
+            AOS.init({ once: true, offset: 50, duration: 800 });
+        }
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const navbar = document.getElementById('navbar');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileBtn.innerHTML = mobileMenu.classList.contains('hidden') ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>';
         });
 
-        // Cattle Data
-        const cattleList = [
-            { id: '101', name: 'রাজা বাবু (বিশাল ষাঁড়)', category: 'প্যাকেজ ষাঁড়', weight: '৫৫০ কেজি', teeth: '৪ টা', price: 215000, img: 'https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=600&q=80', delay: 100 },
-            { id: '102', name: 'কালো মানিক (ফ্রিজিয়ান)', category: 'প্যাকেজ ষাঁড়', weight: '৪৮০ কেজি', teeth: '২ টা', price: 185000, img: 'https://images.unsplash.com/photo-1570042707222-793393a5eb40?auto=format&fit=crop&w=600&q=80', delay: 200 },
-            { id: '103', name: 'লাল বাহাদুর (উন্নত শাহিওয়াল)', category: 'প্যাকেজ ষাঁড়', weight: '৪২০ কেজি', teeth: '২ টা', price: 160000, img: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=600&q=80', delay: 300 },
-            { id: '104', name: 'রানি (দুধের গাভী)', category: 'গাভী', weight: 'দৈনিক ১৮-২০ লিটার দুধ', teeth: 'অর্গানিক', price: 230000, img: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=600&q=80', delay: 100 },
-            { id: '105', name: 'সুলতান (কোরবানি স্পেশাল)', category: 'প্যাকেজ ষাঁড়', weight: '৩৮০ কেজি', teeth: '২ টা', price: 145000, img: 'https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=600&q=80', delay: 200 },
-            { id: '106', name: 'সুন্দরীতামা (ছোট বাছুর/গাভী)', category: 'বাছুর', weight: '১৮০ কেজি', teeth: 'দাঁত উঠেনি', price: 130000, img: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=600&q=80', delay: 300 }
-        ];
-
-        let cart = [];
-        let milkSelectedDuration = 1;
-
-        // Render Cattle with Animations
-        function renderCattle() {
-            const container = document.getElementById('cattle-grid');
-            container.innerHTML = cattleList.map(item => `
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group" data-aos="fade-up" data-aos-delay="${item.delay}">
-                    <div class="overflow-hidden relative h-56">
-                        <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition duration-300"></div>
-                        <span class="absolute top-3 left-3 bg-brandGreen-600/90 backdrop-blur text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">ID: #${item.id}</span>
-                    </div>
-                    
-                    <div class="p-6 space-y-4">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-bold text-xl text-gray-900 group-hover:text-brandGreen-700 transition">${item.name}</h3>
-                        </div>
-                        
-                        <span class="inline-block bg-emerald-50 text-emerald-800 text-xs font-bold px-3 py-1 rounded border border-emerald-100">${item.category}</span>
-                        
-                        <div class="text-sm text-gray-600 space-y-2 bg-gray-50 p-3 rounded-lg border border-gray-100">
-                            <p class="flex items-center gap-2"><i class="fa-solid fa-weight-hanging text-brandGreen-600 w-4"></i> <span class="font-semibold text-gray-800">ওজন/ক্ষমতা:</span> ${item.weight}</p>
-                            <p class="flex items-center gap-2"><i class="fa-solid fa-certificate text-brandGreen-600 w-4"></i> <span class="font-semibold text-gray-800">দাঁত:</span> ${item.teeth}</p>
-                        </div>
-                        
-                        <div class="pt-3 flex justify-between items-center border-t border-gray-100 mt-2">
-                            <span class="text-xl font-black text-brandGreen-700">৳${item.price.toLocaleString('bn-BD')}</span>
-                            <button onclick="addCattleToCart('${item.id}')" class="bg-brandGold-500 hover:bg-brandGold-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl shadow-md transition transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2">
-                                <i class="fa-solid fa-cart-plus"></i> কিনুন
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Milk Calc Logic
-        function updateMilkCalc() {
-            const slider = document.getElementById('milk-slider');
-            const liters = parseInt(slider.value);
-            document.getElementById('milk-val-display').innerText = liters;
-            
-            const totalLiters = liters * milkSelectedDuration;
-            const totalPrice = totalLiters * 110;
-
-            document.getElementById('total-liters-display').innerText = `${totalLiters} লিটার`;
-            
-            // Animate price update
-            const priceDisplay = document.getElementById('total-price-display');
-            priceDisplay.innerText = `৳${totalPrice.toLocaleString('bn-BD')}`;
-            
-            priceDisplay.style.transform = 'scale(1.1)';
-            priceDisplay.style.color = '#16a34a'; // brief flash to green
-            setTimeout(() => {
-                priceDisplay.style.transform = 'scale(1)';
-                priceDisplay.style.color = ''; // back to gold
-            }, 200);
-        }
-
-        function setDuration(days) {
-            milkSelectedDuration = days;
-            document.querySelectorAll('.dur-btn').forEach(btn => {
-                btn.classList.remove('border-emerald-600', 'text-emerald-700', 'bg-emerald-50', 'ring-2', 'ring-emerald-200');
-                btn.classList.add('border-gray-200', 'text-gray-600');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
             });
-            event.target.classList.add('border-emerald-600', 'text-emerald-700', 'bg-emerald-50', 'ring-2', 'ring-emerald-200');
-            updateMilkCalc();
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        const milkPricePerLiter = 110;
+        let selectedLiters = 5;
+        let selectedDays = 1;
+
+        const litersInput = document.getElementById('milkLiters');
+        const litersDisplay = document.getElementById('litersDisplay');
+        const summaryLiters = document.getElementById('summaryLiters');
+        const summaryDays = document.getElementById('summaryDays');
+        const totalPriceDisplay = document.getElementById('totalPrice');
+        const durationBtns = document.querySelectorAll('.duration-btn');
+
+        function updateCalculator() {
+            selectedLiters = parseInt(litersInput.value);
+            const total = selectedLiters * selectedDays * milkPricePerLiter;
+            litersDisplay.textContent = selectedLiters;
+            summaryLiters.textContent = selectedLiters;
+            summaryDays.textContent = selectedDays;
+            totalPriceDisplay.textContent = total.toLocaleString('en-IN');
         }
 
-        // Cart Actions
-        function addCattleToCart(id) {
-            const cattle = cattleList.find(c => c.id === id);
-            cart.push({ id: cattle.id, name: cattle.name, price: cattle.price, qty: 1, type: 'গরু' });
-            updateCartUI();
-            toggleCartModal(true);
-        }
+        litersInput.addEventListener('input', updateCalculator);
 
-        function addMilkToCart() {
-            const liters = parseInt(document.getElementById('milk-slider').value);
-            const totalLiters = liters * milkSelectedDuration;
-            const totalPrice = totalLiters * 110;
-
-            cart.push({
-                id: 'MILK-' + Date.now(),
-                name: `খাঁটি দুধ (${liters} লি/দিন - ${milkSelectedDuration} দিন)`,
-                price: totalPrice,
-                qty: 1,
-                type: 'দুধ'
+        durationBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                durationBtns.forEach(b => {
+                    b.classList.remove('active-duration', 'border-white', 'bg-white', 'text-farm-900');
+                    b.classList.add('border-farm-600', 'text-farm-100');
+                });
+                const target = e.target;
+                target.classList.add('active-duration', 'border-white', 'bg-white', 'text-farm-900');
+                target.classList.remove('border-farm-600', 'text-farm-100');
+                selectedDays = parseInt(target.getAttribute('data-days'));
+                updateCalculator();
             });
-            updateCartUI();
-            toggleCartModal(true);
-        }
+        });
 
-        function removeCartItem(index) {
-            cart.splice(index, 1);
-            updateCartUI();
-        }
+        const animalModalOverlay = document.getElementById('animalModalOverlay');
+        const animalModalBox = document.getElementById('animalModalBox');
 
-        function updateCartUI() {
-            // Update Cart Count Badge with pop animation
-            const countBadge = document.getElementById('cart-count');
-            countBadge.innerText = cart.length;
-            countBadge.classList.add('scale-150', 'bg-red-500');
-            setTimeout(() => countBadge.classList.remove('scale-150', 'bg-red-500'), 300);
+        function openAnimalModal(title, type, weight, age, price, health, imgUrl) {
+            document.getElementById('modalAnimalTitle').textContent = title;
+            document.getElementById('modalAnimalType').textContent = type;
+            document.getElementById('modalAnimalWeight').textContent = weight;
+            document.getElementById('modalAnimalAge').textContent = age;
+            document.getElementById('modalAnimalPrice').textContent = price;
+            document.getElementById('modalAnimalHealth').textContent = health;
+            document.getElementById('modalAnimalImg').src = imgUrl;
 
-            const container = document.getElementById('cart-items-container');
-            
-            if (cart.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-12 px-4 text-gray-500 flex flex-col items-center">
-                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-                            <i class="fa-solid fa-basket-shopping text-3xl text-gray-300"></i>
-                        </div>
-                        <p class="font-bold text-lg text-gray-700">আপনার কার্ট খালি রয়েছে</p>
-                        <p class="text-sm mt-1">পছন্দের গরু বা দুধ কার্টে যুক্ত করুন</p>
-                    </div>`;
-                document.getElementById('cart-total-price').innerText = '৳০';
-                return;
-            }
-
-            let total = 0;
-            container.innerHTML = cart.map((item, idx) => {
-                total += item.price;
-                const icon = item.type === 'দুধ' ? '<i class="fa-solid fa-bottle-droplet text-brandGold-500"></i>' : '<i class="fa-solid fa-cow text-brandGreen-600"></i>';
-                
-                return `
-                    <div class="flex justify-between items-center bg-white p-4 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition group animate-[fadeIn_0.3s_ease-out]">
-                        <div class="flex gap-3 items-center">
-                            <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-lg shrink-0 group-hover:scale-110 transition">
-                                ${icon}
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-sm text-gray-800 line-clamp-1">${item.name}</h4>
-                                <span class="text-sm font-black text-brandGreen-700 mt-1 block">৳${item.price.toLocaleString('bn-BD')}</span>
-                            </div>
-                        </div>
-                        <button onclick="removeCartItem(${idx})" class="w-8 h-8 rounded-full bg-red-50 text-red-500 flex items-center justify-center hover:bg-red-500 hover:text-white transition shadow-sm transform hover:scale-110">
-                            <i class="fa-solid fa-trash-can text-xs"></i>
-                        </button>
-                    </div>
-                `;
-            }).join('');
-
-            document.getElementById('cart-total-price').innerText = `৳${total.toLocaleString('bn-BD')}`;
-        }
-
-        // Add a simple fade-in animation keyframe for newly added cart items
-        document.head.insertAdjacentHTML("beforeend", `<style>@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }</style>`);
-
-        // --- Modals Animation Logic ---
-        
-        function toggleCartModal(show = null) {
-            const modal = document.getElementById('cart-modal');
-            const panel = document.getElementById('cart-panel');
-            const overlay = document.getElementById('cart-overlay');
-            
-            const isShowing = !modal.classList.contains('hidden');
-            const willShow = show !== null ? show : !isShowing;
-
-            if (willShow) {
-                modal.classList.remove('hidden');
-                // Force reflow for transitions to work
-                void modal.offsetWidth;
-                overlay.classList.remove('opacity-0');
-                panel.classList.remove('translate-x-full');
-                document.body.style.overflow = 'hidden'; // Prevent background scroll
-            } else {
-                overlay.classList.add('opacity-0');
-                panel.classList.add('translate-x-full');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = '';
-                }, 300);
-            }
-        }
-
-        function openCheckoutModal() {
-            if (cart.length === 0) {
-                showSuccessModal("দুঃখিত!", "আপনার কার্ট খালি। দয়া করে কার্টে আইটেম যুক্ত করুন।", false);
-                return;
-            }
-            toggleCartModal(false); // Close cart first
-            
+            animalModalOverlay.classList.remove('hidden');
+            animalModalOverlay.classList.add('flex');
             setTimeout(() => {
-                const modal = document.getElementById('checkout-modal');
-                const panel = document.getElementById('checkout-panel');
-                const overlay = document.getElementById('checkout-overlay');
-                const summary = document.getElementById('checkout-summary');
-                
-                let total = cart.reduce((acc, curr) => acc + curr.price, 0);
-                summary.innerHTML = `
-                    <p class="font-bold border-b border-emerald-200 pb-2 mb-2 text-brandGreen-900 flex justify-between">
-                        <span>অর্ডারের সারাংশ</span>
-                        <span class="bg-brandGreen-600 text-white text-xs px-2.5 py-1 rounded-full shadow-sm">${cart.length} আইটেম</span>
-                    </p>
-                    <div class="max-h-32 overflow-y-auto space-y-1.5 pr-2">
-                        ${cart.map(i => `<div class="flex justify-between text-xs font-medium text-gray-700 border-b border-gray-100 pb-1.5"><span>${i.name}</span><span class="font-bold">৳${i.price.toLocaleString('bn-BD')}</span></div>`).join('')}
-                    </div>
-                    <div class="flex justify-between font-black pt-2.5 border-t border-emerald-200 text-brandGreen-800 text-base mt-2">
-                        <span>সর্বমোট বিল:</span>
-                        <span class="text-brandGold-600 text-lg">৳${total.toLocaleString('bn-BD')}</span>
-                    </div>
-                `;
-                
-                modal.classList.remove('hidden');
-                void modal.offsetWidth;
-                overlay.classList.remove('opacity-0');
-                panel.classList.remove('scale-95', 'opacity-0');
-                document.body.style.overflow = 'hidden';
-            }, 300); // Wait for cart slide-out to finish
-        }
-
-        function closeCheckoutModal() {
-            const modal = document.getElementById('checkout-modal');
-            const panel = document.getElementById('checkout-panel');
-            const overlay = document.getElementById('checkout-overlay');
-            
-            overlay.classList.add('opacity-0');
-            panel.classList.add('scale-95', 'opacity-0');
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = '';
-            }, 300);
-        }
-
-        function handlePlaceOrder(e) {
-            e.preventDefault();
-            closeCheckoutModal();
-            cart = [];
-            updateCartUI();
-            
-            setTimeout(() => {
-                showSuccessModal(
-                    "অর্ডার সফল হয়েছে!", 
-                    "আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে! আমাদের প্রতিনিধি ডেলিভারির জন্য খুব শীঘ্রই আপনার সাথে ফোনে যোগাযোগ করবেন।"
-                );
-            }, 300);
-        }
-
-        function handleVisitSubmit(e) {
-            e.preventDefault();
-            showSuccessModal(
-                "আবেদন গৃহীত হয়েছে!", 
-                "আপনার ফার্ম পরিদর্শনের আবেদনটি সফলভাবে গৃহীত হয়েছে! নির্দিষ্ট তারিখে আপনার আগমনের জন্য আমরা অপেক্ষায় রইলাম।"
-            );
-            e.target.reset();
-        }
-
-        function showSuccessModal(title, msg, isSuccess = true) {
-            const modal = document.getElementById('success-modal');
-            const panel = document.getElementById('success-panel');
-            const overlay = document.getElementById('success-overlay');
-            const titleEl = document.getElementById('success-title');
-            const msgEl = document.getElementById('success-msg');
-            const iconContainer = panel.querySelector('.rounded-full');
-            const icon = iconContainer.querySelector('i');
-            const ring = iconContainer.querySelector('.animate-ping');
-
-            titleEl.innerText = title;
-            msgEl.innerText = msg;
-
-            if (isSuccess) {
-                iconContainer.className = "w-24 h-24 bg-emerald-100 text-brandGreen-600 rounded-full flex items-center justify-center text-5xl mx-auto mb-6 relative shadow-inner";
-                icon.className = "fa-solid fa-check relative z-10";
-                ring.className = "absolute inset-0 rounded-full border-4 border-brandGreen-500 animate-ping opacity-20";
-                titleEl.className = "text-2xl font-black text-brandGreen-700 mb-2";
-            } else {
-                iconContainer.className = "w-24 h-24 bg-red-100 text-red-500 rounded-full flex items-center justify-center text-5xl mx-auto mb-6 relative shadow-inner";
-                icon.className = "fa-solid fa-triangle-exclamation relative z-10";
-                ring.className = "absolute inset-0 rounded-full border-4 border-red-500 animate-ping opacity-20";
-                titleEl.className = "text-2xl font-black text-red-600 mb-2";
-            }
-            
-            modal.classList.remove('hidden');
-            void modal.offsetWidth;
-            overlay.classList.remove('opacity-0');
-            panel.classList.remove('scale-90', 'opacity-0');
+                animalModalOverlay.classList.remove('opacity-0');
+                animalModalBox.classList.remove('scale-95');
+                animalModalBox.classList.add('scale-100');
+            }, 10);
             document.body.style.overflow = 'hidden';
         }
 
-        function closeSuccessModal() {
-            const modal = document.getElementById('success-modal');
-            const panel = document.getElementById('success-panel');
-            const overlay = document.getElementById('success-overlay');
-            
-            overlay.classList.add('opacity-0');
-            panel.classList.add('scale-90', 'opacity-0');
-            
+        function closeAnimalModal() {
+            animalModalOverlay.classList.add('opacity-0');
+            animalModalBox.classList.remove('scale-100');
+            animalModalBox.classList.add('scale-95');
             setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = '';
+                animalModalOverlay.classList.add('hidden');
+                animalModalOverlay.classList.remove('flex');
+                document.body.style.overflow = 'auto';
             }, 300);
         }
 
-        // Init Setup
-        window.onload = function() {
-            renderCattle();
-            updateMilkCalc();
-        };
+        const orderForm = document.getElementById('orderForm');
+        const successModal = document.getElementById('orderSuccessModal');
+        const successModalBox = document.getElementById('successModalBox');
+
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const cName = document.getElementById('customerName').value;
+            const cArea = document.getElementById('customerArea').value;
+            const finalTotal = selectedLiters * selectedDays * milkPricePerLiter;
+
+            document.getElementById('successName').textContent = cName;
+            document.getElementById('successLiters').textContent = selectedLiters;
+            document.getElementById('successDays').textContent = selectedDays;
+            document.getElementById('successArea').textContent = cArea;
+            document.getElementById('successTotal').textContent = finalTotal.toLocaleString('en-IN');
+
+            successModal.classList.remove('hidden');
+            successModal.classList.add('flex');
+            setTimeout(() => {
+                successModal.classList.remove('opacity-0');
+                successModalBox.classList.remove('scale-90');
+                successModalBox.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+            orderForm.reset();
+        });
+
+        function closeSuccessModal() {
+            successModal.classList.add('opacity-0');
+            successModalBox.classList.remove('scale-100');
+            successModalBox.classList.add('scale-90');
+            setTimeout(() => {
+                successModal.classList.add('hidden');
+                successModal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === animalModalOverlay) closeAnimalModal();
+            if (e.target === successModal) closeSuccessModal();
+        });
     </script>
 </body>
 </html>
